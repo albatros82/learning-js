@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin-bottom: 5px;
+}
+
+@keyframes myAnim {
+    0% {
+        margin-left: 100px;
+    }
+
+    /*30% {
+        margin-left: 500px;
+    }
+
+    70% {
+        margin-left: 300px;
+    }*/
+
+
+    100% {
+        margin-left: 800px;
+    }
+}
+
+@keyframes myAnim2 {
+    0% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: blue;
+    }
+}
+
+
+
+body:hover .test1 {
+    /*
+    animation-name: myAnim;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-fill-mode:both;
+    animation-play-state:paused;
+    */
+    animation: myAnim 4s ease 2s 3 alternate both running, myAnim2 4s 3s;
+}
+
+body:hover .test2 {
+    animation-name: myAnim;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+
+}
+body:hover .test3 {
+    animation-name: myAnim;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+}
+body:hover .test4 {
+    animation-name: myAnim;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+}
+body:hover .test5 {
+    animation-name: myAnim;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+}
+body:hover .test6 {
+    animation-name: myAnim;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0,-0.51,1,1.41);
+}
+
+@keyframes myAnim3 {
+    0% {
+        transform: translateX(-1500px);
+    }
+
+    75% {
+        transform: translateX(100px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+
+}
+
+.p {
+    width: 50%;
+    animation: myAnim3 2s;
+    margin: 0 auto;
+}
+
+@keyframes myAnim4 {
+    0% {
+        transform: translateX(0);
+    }
+
+    10%, 50%, 90% {
+        transform: translateX(-5px);
+    }
+
+    20%, 80% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.derg {
+    width: 200px;
+    text-align: center;
+    margin: 100px auto 200px;
+    outline: 1px solid black;
+}
+
+.derg:hover {
+    animation: myAnim4 1s;
+}
+
+
+/*
+animation: myAnim 4s; короткая запись
+
+animation-name: myAnim; - задает имя анимации
+animation-duration: 4s; - задает время анимации
+animation-timing-function: ease; - задает поведение анимации
+
+animation-delay: 2s; - задержка анимации
+animation-delay: -2s; - пропускает анимацию 2сек 
+
+animation-iteration-count: 3; количество повторов анимации (может быть значение 2.5 два с половиной раза например)
+animation-iteration-count: 0; анимация игнорируется
+animation-iteration-count: infinite; бесконечное выполнение анимации
+
+animation-direction: normal; задаёт направление анимации от 0% до 100%
+animation-direction: reverse; задаёт направление анимации от 10% до 0%
+
+animation-direction: alternate; гоняет вперед И обратно, работает если повторений больше чем 1
+animation-direction: alternate-reverse; анимация в обратном режиме работает если повторений больше чем 1
+
+animation-fill-mode:forwards; оставляет анимацию на законченном месте;
+animation-fill-mode:backwards; сдвигает анимацию до ее начала (если анимация начинается от 1px например)
+animation-fill-mode:both; применяются оба верхних свойства;
+
+animation-play-state:paused; останавливает запущенную анимацию
+animation-play-state:running; значение по умолчанию, запускает анимацию
+
+группавая запись
+animation: myAnim 4s ease 2s 3 alternate both running;

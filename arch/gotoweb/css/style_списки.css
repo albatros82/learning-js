@@ -1,0 +1,25 @@
+ul {
+    list-style-position: inside; /* list-style-position специализированная команда для списков*/
+    list-style-type: square;
+    list-style-image: url(../img/mark1.png); /* есть более эффективный метод */
+}
+
+ul li {
+    color: red;
+}
+
+ol li {
+    color: blue;
+    list-style-position: inside;
+    list-style-type: lower-greek;
+}
+
+dt {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+dd {
+    font-style: italic;
+    text-decoration: underline
+}

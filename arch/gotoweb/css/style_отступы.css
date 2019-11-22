@@ -1,0 +1,37 @@
+p {
+    background-color: yellow;
+    width: 500px;
+}
+
+/*.etalon {
+    width: 500px;
+    border: 5px solid red;
+    border-width: 5 px;
+    /*border-style: solid;
+    border-color: red;
+    padding: 20px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 50px;*/
+/*    border-top-color: red;
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-left-color: blue;
+    border-left-width: 8px;
+    border-left-style: dashed;
+
+    padding: 20px 30px 40px 50px;
+
+    margin: 20px;
+
+    outline: 3px solid green;
+}*/
+
+.test {
+    border: 5px solid red;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 5px;
+
+}

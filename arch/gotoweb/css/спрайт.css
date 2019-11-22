@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.block {
+    outline: 0px solid red;
+    margin: 50px auto;
+    font-size: 0;
+    text-align: center;
+}
+
+.block a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    outline: 0px solid blue;
+    vertical-align: top;
+    margin: 0 5px;
+    background-image: url(../img/sprite.png);
+    transition: all 0.2s;
+    /*background-position: -10px -10px; если нужно отцентровать по блоку*/
+}
+
+.car1 {
+    background-position: 0 0;
+}
+
+.car2 {
+    background-position: -40px 0;
+}
+
+.car3 {
+    background-position: -80px 0;
+}
+
+.car1:hover {
+    background-position: 0 -40px;
+}
+
+.car2:hover {
+    background-position: -40px -40px;
+}
+
+.car3:hover {
+    background-position: -80px -40px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>формы</title>
+    <link href="css/формы.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <form method="get" action="">
+        <fieldset>
+            <legend>Персональные данные</legend>
+            <input id="login" type="text" name="login" value="Mike"> <br>
+            <input type="password" name="pass" required placeholder="Password"> <br>
+            <input type="email" required name="email"> <br>
+        </fieldset>
+
+        <label for="login">Укажите логин</label><br>
+        
+        <fieldset>
+            <legend>Предпочтения</legend>
+
+            <label>
+                <input type="checkbox" name="hob1" value="hunt">Охота<br>
+            </label>
+            <label>
+                <input type="checkbox" name="hob2" value="fish">Рыбалка<br>
+            </label>
+            <label>
+                <input type="checkbox" name="hob3" value="car">Машины<br>
+            </label>
+        </fieldset>>
+
+        <label>
+            <input type="radio" name="sex" checked value="man">Мужчина<br>
+        </label>
+
+        <input type="radio" name="sex" value="wonen">Женщина<br>
+        
+        <input type="file" name="file"><br>
+
+        <input type="hidden"><br> <!--скрытая для php или js-->
+
+        <input type="submit" value="Зарегистрироваться"><br>
+        <input type="button" value="Кнопка"><br>
+        <input type="reset" value="Reset"><br>
+        <button>Кнопка2</button> <!--тоже самое что и input type="submit" --><br>
+        
+        <select name="list">
+            <optgroup label="фрукты">
+                <option value="apple">Яблоко</option>
+                <option value="punch">Груша</option>
+                <option value="sliva">Слива</option>
+                <option value="banan">Банан</option>
+            </optgroup>
+            <optgroup label="овощи">
+                <option value="patoto">Картофель</option>
+                <option value="tomato">Помидор</option>
+                <option value="luk">Лук</option>
+                <option value="perec">Перец</option>
+            </optgroup>
+        </select> <br>
+        <textarea placeholder="Введите текст тут"></textarea>
+
+    </form>
+</body>
+</html>

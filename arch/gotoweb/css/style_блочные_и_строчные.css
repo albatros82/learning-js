@@ -1,0 +1,29 @@
+p, h1, h2 {
+    outline: 1px solid blue;
+}
+
+a, strong, span {
+    outline: 1px solid red;
+}
+
+p {
+    width: 200px;
+    height: 50px;
+}
+
+img {
+    width: 300px;
+}
+
+.link1 {
+    display: inline-block;
+}
+
+a {
+    width: 200px;
+    height: 50px;
+}
+
+.inline {
+    display: inline;
+}

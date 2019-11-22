@@ -1,0 +1,103 @@
+li, p {
+    background-color: yellow;
+    height: 20px;
+    padding: 0;
+    margin: 0 0 3px 0;
+}
+
+
+input:enabled + span {
+    color: red;
+}
+
+
+/*
+:empty {
+    background-color: red;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:focus {
+    color: black;
+}
+
+a:active {
+    color: red;
+}
+
+p:first-child {
+    color: red;
+}
+
+p:last-child {
+    color: blue;
+}
+
+p:first-of-type {
+    color: red;
+}
+
+p:nth-child(2) { -если только 2 в списке параграф
+    color: red;
+}
+
+p:nth-of-type(2) { второй по типу параграф
+    color: red;
+}
+
+p:nth-of-type(even) { четные параграфы
+    color: red;
+}
+
+p:nth-of-type(odd) { не четные параграфы
+    color: red;
+}
+
+p:nth-of-type(2n+1) { по типу, перебор n от 0 до бесконечности, цифры любые
+    color: red;
+}
+
+p:nth-last-of-type(3) { по типу с конца
+    color: red;
+}
+
+li:not(:first-of-type) a { все ли кроме первого по типу
+    color: red;
+}
+
+li:not(:last-of-type) a { все кроме последнего по типу
+    color: red;
+}
+
+a:not([href="https://ya.ru"]) { все ссылки кроме ya.ru
+    color: red;
+}
+
+input:focus { фокус на ввод
+    border: 1px solid blue;
+    color: blue;
+}
+
+input:checked + span { инпуты с выбором
+    color: red;
+}
+
+
+input:disabled + span { заблокированные элементы (disabled)
+    color: red;
+}
+
+input:enabled + span { все не заблокированные 
+    color: red;
+}

@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse; /*separate чтоб работал hide*/
+    border-spacing: 10px 20px;
+    caption-side: top;
+    empty-cells: hide;
+}
+
+td, th {
+    border: 1px solid blue;
+    background-color: yellow;
+    color: blue;
+    height: 50px;
+}
+
+caption {
+    border: 2px solid green;
+}
+
+.thead th, .tfoot td {
+    background-color: blue;
+    color: white;
+
+}

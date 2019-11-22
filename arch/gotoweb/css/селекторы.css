@@ -1,0 +1,76 @@
+/** {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    color: blue;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+}
+
+#p_2 {
+    color: red;
+    font-size: 20px;
+}
+
+#div_2 {
+    background-color: blue;
+    width: 200px;
+    height: 100px;
+}
+
+.paragraf {
+    color: blue;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.p_2 {
+    color: red;
+    font-size: 20px;
+}
+
+.div_2 {
+    background-color: blue;
+    width: 200px;
+    height: 100px;
+}
+
+.paragraf {
+    color: blue;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.paragraf.p_2 {
+    color: red;
+}
+
+.p_2, .div_2 {
+    color: red;
+}
+
+body p span {
+    color: red;
+}
+
+#div_4 .paragraf {
+    color: blue;
+}
+
+p span {
+    color: red;
+}*/
+
+
+h2~span {
+    color: red
+}

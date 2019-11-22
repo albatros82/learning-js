@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.block1 {
+    width: 600px;
+    height: 400px;
+    outline: 1px solid red;
+
+    background: linear-gradient(to right, red, blue);
+
+}
+
+.block2 {
+    width: 800px;
+    height: 400px;
+    outline: 1px solid red;
+    margin-top: 50px;
+
+    background: radial-gradient(ellipse 20% 50% at 20% 50%, red, blue); /* параметр circle делает круг, 
+    ellipse значение может содержать и размеры в px и %, 
+    положение может задаваться как left right bottom top так и в px*/
+
+}
+
+.block3 {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background: radial-gradient(circle at 70% 10%, transparent, yellow);
+}

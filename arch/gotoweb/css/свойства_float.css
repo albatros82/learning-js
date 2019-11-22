@@ -1,0 +1,36 @@
+.header {
+    background-color: red;
+    height: 200px;
+}
+
+.left {
+    outline: 2px solid green;
+    height: 500px;
+    width: 200px;
+    float: left;
+}
+
+.center {
+    outline: 2px solid blue;
+    height: 500px;
+    width: 500px;
+    float: left;
+}
+
+.right {
+    outline: 2px solid black;
+    height: 500px;
+    width: 200px;
+    float: left;
+}
+
+.footer {
+    background-color: red;
+    height: 200px;
+}
+
+.wrap:after {
+    content: "";
+    clear: both;
+    display: block;
+}

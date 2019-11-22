@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap {
+    width: 800px;
+    outline: 2px solid black;
+    margin: 0 auto;
+}
+
+
+.div1 {
+    height: 200px;
+    background-color: red;
+}
+
+.div2 {
+    height: 200px;
+    background-color: blue;
+}
+
+.div3 {
+    height: 200px;
+    background-color: yellow;
+}
+
+.paranja {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.popup {
+    width: 500px;
+    height: 300px;
+    border: 2px solid #ccc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 100px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    font: bold 12px Arial;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+
+
+
+
+/* часть 1
+.wrap {
+    width: 800px;
+    height: 800px;
+    outline: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+
+.div1 {
+    height: 200px;
+    background-color: red;
+}
+
+.div2 {
+    height: 200px;
+    width: 300px;
+    background-color: blue;
+    position: absolute;
+
+
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+
+}
+
+.div3 {
+    height: 200px;
+    background-color: yellow;
+
+}
+
+
+ Сноска к div2
+static - задано по умолчанию
+
+relative - выводит элемент из потока, бронирует место за собой и может сдвигаться (может служить якорем для absolute)
+
+absolute - выводит элемент из потока, место за элементом не бронируется последующие элементы занимают его место если он сдвинут
+    также позиционируется по блоку родителя отличный от позиции static
+
+fixed - выводит элемент из потока фиксированное значение позиционирования на viewport
+
+top - приоритетнее bottom при задании обоих свойств
+bottom
+left - приоритетнее right при задании обоих свойств
+right
+
+
+z-index - можно управлять какой элемент перекрывает другой
+
+*/
+
+
+

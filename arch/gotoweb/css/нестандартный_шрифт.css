@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Lato"; /* название шрифта придумано */
+    src: local("Lato"),
+    url(../fonts/*.woff2) format('расширение файла'), 
+    url(../fonts/*.woff) format('расширение файла'),
+    url(../fonts/*.ttf) format('расширение файла'); /* перечислить все пути к шрифтам */
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Lato"; /* название шрифта придумано */
+    src: local("Lato"),
+    url(../fonts/*.*) format('расширение файла форматы для браузеров свой'), 
+    url(../fonts/) format('расширение файла форматы для браузеров свой'),
+    url(../fonts/) format('расширение файла форматы для браузеров свой'); /* перечислить все пути к шрифтам */
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Lato"; /* название шрифта придумано */
+    src: local("Lato"),
+    url(../fonts/*.*) format('расширение файла'), 
+    url(../fonts/) format('расширение файла'),
+    url(../fonts/) format('расширение файла'); /* перечислить все пути к шрифтам */
+    font-style: normal;
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font: 400 italic 20px 'Lato', sans-serif;
+}

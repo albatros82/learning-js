@@ -1,0 +1,42 @@
+.wrap {
+    width: 500px;
+    outline: 1px solid red;
+    padding-bottom: 10px;
+}
+
+.wrap:after {
+    content: "";
+    display: block;
+    height: 10px;
+    outline: 1px solid blue;
+    background-color: green;
+}
+
+
+/*h1:before { - впериди h1 контент не выделяется
+    content: '123';
+}
+
+h1:after { - позади h1 контент не выделяется
+    content: '123';
+}
+
+p:after { - тоже самое но для параграфа
+    content: '123';
+}
+
+div:before { - до всего содержимого блока
+    content: url('../img/timon.jpg');
+}
+
+div:after { - после всего содержимого блока
+    content: url('../img/timon.jpg');
+}
+
+h1:first-letter { - первая буква в h1
+    color: red;
+}
+
+p:first-line { - первая строка в p окне браузера
+    color: red;
+}

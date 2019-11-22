@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.block {
+    width: 700px;
+    height: 500px;
+    outline: 1px solid red;
+
+    /*background: linear-gradient(to bottom, green, yellow);
+    background: linear-gradient(45deg, green, yellow);
+
+    background: linear-gradient(to right, green, yellow, red, blue);
+
+    background: linear-gradient(to right, green 100px, yellow 200px, red, blue 300px);
+
+    background: linear-gradient(to bottom, red, transparent), linear-gradient(to bottom, green, yellow, transparent);*/
+
+    background: linear-gradient(to right, red 50px, blue 50px, blue 70px);
+    background-size: 70px;
+
+
+}

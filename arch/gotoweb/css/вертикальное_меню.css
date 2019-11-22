@@ -1,0 +1,149 @@
+/*font-family: 'Lato', sans-serif;*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap {
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    font: 200 20px 'Lato', sans-serif;
+}
+
+.aside {
+    background-color: #293744;
+    width: 314px;
+    height: 1500px; /*???????????????????????????*/
+}
+
+.title {
+    text-transform: uppercase;
+    color: #bed1e4;
+    line-height: 57px;
+    background-color: #33414e;
+    padding-left: 30px;
+}
+
+.nav, .subnav {
+    list-style-type: none;
+}
+
+.nav li {
+}
+
+.nav > li > a {
+    display: block;
+    padding: 21px 0 21px 80px;
+    text-decoration: none;
+    color: #ededec;
+    border-left: 8px solid transparent;
+    background-color: #33414e;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav > li > a:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 23px;
+    background-image: url(../img/sprite_color.png);
+}
+
+.nav > li .dash:before {
+    background-position: 0 0;
+}
+
+.nav > li .lay:before {
+    background-position: -24px 0;
+}
+
+.nav > li .page:before {
+    background-position: -48px 0;
+}
+
+.nav > li >a:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 23px;
+    background-image: url(../img/sprite_color.png);
+    background-position: 48px 0;
+    transition: transform 0.5s;
+}
+
+.subnav {
+
+}
+
+.subnav li {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.8s;
+}
+
+.subnav a {
+    display: block;
+    padding: 21px 0 21px 115px;
+    text-decoration: none;
+    color: #ededec;
+    background-color: #293744;
+    position: relative;
+    cursor: pointer;
+}
+
+.subnav a:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 86px;
+    border: 3px solid transparent;
+}
+
+.subnav > li:nth-of-type(1) > a:before {
+    border-color: #85c875;
+    border-radius: 50%;
+}
+
+.subnav > li:nth-of-type(2) > a:before {
+    border-color: #0bc4df;
+    border-radius: 50%;
+
+}
+
+.subnav > li:nth-of-type(3) > a:before {
+    border-color: #f1a80a;
+    border-radius: 50%;
+}
+/*
+.nav > li:hover .subnav {
+    display: block;
+    
+} будем использовать js script*/
+
+.nav .active {
+    border-color: #85c875;
+    background-color: #253340;
+}
+
+.nav > li >.active +.subnav li {
+    height: 67px;
+}
+
+.nav .active::after {
+    transform: rotate(90deg);
+

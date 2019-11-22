@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+div {
+    height: 200px;
+}
+
+img {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+}
+
+.red, .green {
+    display: inline-block;
+    width: 200px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+/*====================*/
+
+img {
+    transform: rotate(45deg);
+    transform-origin: 200px 200px;
+}
+
+.red2 {
+    width: 500px;
+    height: 600px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.red2::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 10px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.7);
+    left: 15px;
+    bottom: 8px;
+    transform: rotate(-3deg);
+    z-index: -1;
+
+}
+
+.red2::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 10px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.7);
+    right: 15px;
+    bottom: 8px;
+    transform: rotate(3deg);
+    z-index: -1;
+
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 200px;
+    transform: matrix(1, 0, 0, 1, -100, 100);
+}
+
+
+
+/*
+transform: translateX(10px); смещение вправо по оси X на 10px
+transform: translateY(10px); смещение ВНИЗ по оси Y на 10px
+transform: translateX(10px) translateY(10px); допустимая запись
+transform: translate(10px, 10px); то же самое что и выше
+transform: translate(50%, 0); сдвиг вправо на 50% от своей ширины
+
+transform: scaleX(2); увеличивае эл.т в ширину в 2 раза
+по оси Y также работает
+можно увеличивать или уменьшать по оси x и y
+transform: scale(-1); отображает зеркально по оси x;
+transform: scale(-1, -1); отображает зеркально по оси x + переворачивает
+transform: rotate(90deg) translateY(-50px); - сдвигает по оси X т.к. был поворот 90гр. и оси также повернуло
+transform: skewX(20deg); - изменяет угол осей (сворачивает)
+
+transform: matrix(1, 0, 0, 1, -100, 100); - короткая запись для свойств
+
+transform: rotate(45deg);
+transform-origin: 200px 200px; вращение задается по правому нижнему углу
+transform-origin: right bottom; вращение задается по правому нижнему углу

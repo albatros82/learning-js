@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Формы Google</title>
+    <link href="css/формыGoogle.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="form_google" method="POST" action="">
+            <p>Как вас зовут</p>
+            <label class="label_inline label_first">
+                <input type="text" name="name" placeholder="Имя">
+            </label>
+            <label class="label_inline label_second">
+                <input type="text" name="surname" placeholder="Фамилия">
+            </label>
+
+            <label>Придумайте имя пользователя
+                    <input type="text" name="email">
+            </label>
+
+            <label>Придумайте пароль
+                    <input type="password" name="password">
+            </label>
+
+            <label>Подтвердите пароль
+                    <input type="password" name="confirm">
+            </label>
+            <p>Дата рождения</p>
+            <label class="label_inline label_day">
+                    <input type="text" name="day" placeholder="день">
+            </label>
+
+            <label class="label_inline label_month">
+                    <select name="month">
+                        <option value="january">Январь</option>
+                        <option value="february">Февраль</option>
+                        <option value="march">Март</option>
+                        <option value="april">Апрель</option>
+                        <option value="may">Май</option>
+                        <option value="june">Июнь</option>
+                        <option value="july">Июль</option>
+                        <option value="august">Август</option>
+                        <option value="september">Сентябрь</option>
+                        <option value="october">Октябрь</option>
+                        <option value="november">Ноябрь</option>
+                        <option value="december">Декабрь</option>
+                    </select>
+            </label>
+
+            <label class="label_inline label_year">
+                    <input type="text" name="year" placeholder="год">
+            </label>
+            <p>Пол</p>
+            <label>
+                    <select name="sex">
+                        <option value="sex_women">Женский</option>
+                        <option value="sex_men">Мужской</option>
+                        <option value="sex_none">Не указан</option>
+                    </select>
+            </label>
+            <label>Мобильный телефон
+                <input type="text" name="tel" value="+380">
+            </label>
+
+            <label>Запасной адрес эл.почты
+                    <input type="text" name="email_2">
+            </label>
+            <p>Страна</p>
+            <label>
+                <select name="country">
+                    <option value="ua">Украина</option>
+                    <option value="ru">Россия</option>
+                    <option value="be">Беларусь</option>
+                    <option value="md">Молдова</option>
+                    <option value="pl">Польша</option>
+                    <option value="tu">Турция</option>
+                </select>
+        </label>
+        <input type="submit" value="Далее">
+        </form>
+    </div>
+
+</body>
+</html>
