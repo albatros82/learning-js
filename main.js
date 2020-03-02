@@ -250,10 +250,21 @@ Boolean ( str ); булево значение
 //     if (num > 100 || num === null) break;
 // }
 
+// let i = +prompt ('Первое число','1');
+// let j = +prompt ('Конечное число', '6');
+// let sum = 0;
 
-for (let i = 1; i < 10; i++ ) {
+// for (i; i <= j; i++) {
+//     if( i % 2 != 0) {
+//         sum += i;
+//     } else {
+//         continue;
+//     }
+// }
+// alert (sum);
+
+for (let i = 1; i < 10; i++) {
     for (let j = 1; j <= 10; j++) {
-        console.log (`${i} * ${j} = ${i * j}`);
-    }
-    console.log(' ');
+        console.log (`${i} + ${j} = ${i + j}`);
+    } console.log(' ');
 }
