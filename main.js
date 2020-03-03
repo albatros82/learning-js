@@ -1,3 +1,17 @@
+// интересное поведение switch (true)
+// let day = +prompt('День недели','');
+// switch (true) {
+//     case day <= 10:
+//         alert ('Первая декада');
+// Объяснение---
+//switch (expression) 
+//(expression) Выражение, значение которого сравнивается со всеми случаями.
+
+// в конструкции switch всегда проверяется строгое равенство === 
+// 1 и '1' не равны!
+
+// проверку на NaN в цикле нужно проводить первую
+
 // Вызов break/continue возможен только внутри цикла, и метка должна находиться где-то выше этой директивы.
 
 // из цикла можно выйти директивой break;
@@ -263,8 +277,58 @@ Boolean ( str ); булево значение
 // }
 // alert (sum);
 
-for (let i = 1; i < 10; i++) {
-    for (let j = 1; j <= 10; j++) {
-        console.log (`${i} + ${j} = ${i + j}`);
-    } console.log(' ');
+// for (let i = 1; i < 10; i++) {
+//     for (let j = 1; j <= 10; j++) {
+//         console.log (`${i} + ${j} = ${i + j}`);
+//     } console.log(' ');
+// }
+
+// let a = 2 + 2;
+// switch (a) {
+//     case +'1': // групируем case 1 и case 2
+//     case +'2':
+//         alert ('Мало');
+//         break;
+//     case +'3':
+//         alert ('Мало');
+//         break;
+//     case +'4':
+//         alert ('В точку');
+//         break;
+//     default:
+//         alert ('Другое значение');
+// }
+
+// let browser = prompt ('Какой вы используете браузер','');
+// if (browser === 'Edge') {
+//     alert ('Используешь Edge');
+// } else if (browser === 'Chrome' || browser === 'Safari' || browser === 'Opera' || browser === 'Firefox') {
+//     alert ('Ок, это тоже не плохой браузер')
+// } else {
+//     alert ('Используй один из браузеров')
+// }
+
+// let num = +prompt ('Введите число между 0 и 3','');
+// switch (num) {
+//     case 0:
+//     case 1:
+//         alert (`Вы ввели число ${num}`);
+//         break;
+//     case 2:
+//     case 3:
+//         alert('Вы ввели число 2, а может 3')
+// }
+
+let day = +prompt('День недели','');
+switch (true) {
+    case day <= 10:
+        alert ('Первая декада');
+        break;
+    case day > 10 && day <=20:
+        alert ('Вторая декада');
+    case day > 20 && day <= 31:
+        alert ('Третья декада');
+    default:
+        alert('Не определенная декада');
 }
+alert (day + typeof day);
