@@ -1,3 +1,22 @@
+
+// // Function Expression
+// let sum = function(a, b) {
+//     return a + b;
+//};
+
+// //Function Declaration
+// function sum(a, b) {
+//     return a + b;
+// }
+
+// Никогда не добавляйте перевод строки между return и его значением
+
+// function showMessage(userName, say = 'default') {
+//     alert(userName + ' ' + say);
+// }
+// showMessage('Иван', 'привет');
+// если не передать в функцию второй аргумент то будет Иван default
+
 // интересное поведение switch (true)
 // let day = +prompt('День недели','');
 // switch (true) {
@@ -319,16 +338,144 @@ Boolean ( str ); булево значение
 //         alert('Вы ввели число 2, а может 3')
 // }
 
-let day = +prompt('День недели','');
-switch (true) {
-    case day <= 10:
-        alert ('Первая декада');
-        break;
-    case day > 10 && day <=20:
-        alert ('Вторая декада');
-    case day > 20 && day <= 31:
-        alert ('Третья декада');
-    default:
-        alert('Не определенная декада');
-}
-alert (day + typeof day);
+// let day = +prompt('День недели','');
+// switch (true) {
+//     case day <= 10:
+//         alert ('Первая декада');
+//         break;
+//     case day > 10 && day <=20:
+//         alert ('Вторая декада');
+//         break;
+//     case day > 20 && day <= 31:
+//         alert ('Третья декада');
+//         break;
+//     default:
+//         alert('Не определенная декада');
+// }
+
+// function showMessage () {
+//     let message = 'Привет'; // видна только внутри функции
+//     alert (message);
+// }
+
+// showMessage ();
+
+
+// let userName = 'Ford';
+
+// function showMessage() {
+//     let message = `Привет ${userName}`;
+//     alert (message);
+// }
+
+// function changeName() {
+//     userName = 'Ваня';
+// }
+
+// showMessage();
+// changeName();
+// showMessage();
+
+// function showMessage(userName, say = 'default') {
+//     alert(userName + ' ' + say);
+// }
+// showMessage('Иван', 'привет');
+
+
+// let age = prompt ('Сколько вам лет','');
+
+// function checkAge (age) {
+//     if ( age > 18 ) {
+//         return true;
+//     } else {
+//         return confirm ('Родители разрешили?');
+//     }
+// }
+
+// if ( checkAge(age) ) {
+//     alert ('Доступ разрешен');
+// } else {
+//     alert ('Доступ закрыт');
+// }
+
+// function showPrimes(n) {
+
+//     for (let i = 2; i < n; i++) {
+//       if (!isPrime(i)) continue;
+  
+//       alert(i);  // простое
+//     }
+//   }
+  
+//   function isPrime(n) {
+//     for (let i = 2; i < n; i++) {
+//       if ( n % i == 0) return false;
+//     }
+//     return true;
+//   }
+// showPrimes(10);
+
+// function checkAge(age) {
+//     return age > 18 ? true : confirm ('Родители разрешили?'); 
+// }
+
+// checkAge(10);
+
+// function checkAge(age) {
+//     return age > 18 || confirm ('Родители разрешили?'); 
+// }
+
+// function min(a,b) {
+//     return (a < b) ? a : b; 
+// }
+// alert (min(3,7));
+
+// function pow(x, n) {
+//     x = +prompt ('Введите X','');
+//     n = +prompt ('Введите N','');
+//     return (n < 1) ? alert('Введите натуральное число','') : alert (x ** n);
+// }
+
+// pow();
+
+// function sayHello () {alert ('Привет');};
+
+// alert (sayHello);
+
+// function ask (question, yes, no) {
+//     return (confirm(question)) ? yes() : no();
+// }
+
+// function showOk() {
+//     alert('Вы согласны');
+// }
+
+// function showCancel() {
+//     alert('Вы отменили выполнение');
+// }
+
+// ask('Вы согласны?', showOk, showCancel);
+
+// function ask(question, yes, no) {
+//     return confirm(question) ? yes() : no ();
+// }
+// ask ('Вы согласны?',
+//     function() {alert('Вы согласились');},
+//     function() {alert('Вы отказались');}
+// );
+
+// sayHi('Вася');
+
+// function sayHi(name) {
+//     alert(`Привет ${name}`);
+// }
+// let sayHi = function(name) {alert('Привет' + name);}
+// sayHi('Вася');
+
+// function ask(question, yes, no) {
+//     return confirm (question) ? yes (): no ();
+// };
+
+// let showOk = function () {alert ('Ok')}; 
+// let showCancel = function () {alert ('Cancel')};
+// ask ('Вы голодны?', showOk, showCancel);
