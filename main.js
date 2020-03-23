@@ -476,6 +476,48 @@ Boolean ( str ); булево значение
 //     return confirm (question) ? yes (): no ();
 // };
 
-// let showOk = function () {alert ('Ok')}; 
+// let showOk = function () {alert ('Ok')};
 // let showCancel = function () {alert ('Cancel')};
 // ask ('Вы голодны?', showOk, showCancel);
+
+// let sum = (a, b) => a + b;
+// let sum = function (a, b) {
+//     return (a + b);
+// }
+
+// let sayHi = () => alert ('Hello!');
+// sayHi();
+
+// let age = prompt ('Сколько Вам лет','10');
+// let welcome = (age < 18) ?
+//     () => 'Привет':
+//     () => 'Здравствуйте';
+// alert (welcome());
+
+// let ask = (question, yes, no) => confirm() ? yes() : no();
+
+// ask ('Вы голодны?',
+//     ()=> alert('Вы согласились'),
+//     ()=> alert ('Вы не согласились')
+// );
+
+
+// let name = prompt ('Ваше имя','');
+// let age = prompt ('Ваш возраст','');
+// let sayHi = (age < 18) ? 'Привет': 'Здравствуйте';
+
+// let year = null;
+// switch (true) {
+//     case (age == '1'):
+//         year = 'год';
+//         break;
+//     case (age > '1' && age < '5'):
+//         year = 'года';
+//         break;
+//     case (age == '0' || age <= '100'):
+//         year = 'лет';
+//         break;
+// }
+
+// let sayHello = (name, age) => `${sayHi} ${name}, ваш возраст ${age} ${year}.`;
+// alert(sayHello(name, age));
