@@ -17,6 +17,37 @@
 
 
 
+//Преобразование объектов
+
+// obj[Symbol.toPrimitive] = function(hint) {
+    // должен вернуть примитивное значение
+    // hint равно чему-то одному из: "string", "number" или "default"
+// };
+
+// пример:
+// let user = {
+//     name: "John",
+//     money: 1000,
+  
+//     [Symbol.toPrimitive](hint) {
+//       alert(`hint: ${hint}`);
+//       return hint == "string" ? `{name: "${this.name}"}` : this.money;
+//     }
+//   };
+  
+//   // демонстрация результатов преобразований:
+//   alert(user); // hint: string -> {name: "John"}
+//   alert(+user); // hint: number -> 1000
+//   alert(user + 500); // hint: default -> 1500
+
+
+// если нет Symbol.toPrimitive
+
+// Методы toString/valueOf
+// toString -> valueOf для хинта со значением «string».
+// valueOf -> toString – в ином случае.
+
+
 
 
 
@@ -965,23 +996,65 @@ Boolean ( str ); булево значение
 //     console.log (key + ':' + ' ' + user[key]);
 // }
 
-let user1 = {
-    name: 'John',
-    age: 25,
-    dateOfBirht: '25.10.2019',
-}
+// let user1 = {
+//     name: 'John',
+//     age: 25,
+//     dateOfBirht: '25.10.2019',
+// }
 
-for (let key in user1) {
-    console.log( user1[key] );
-}
+// for (let key in user1) {
+//     console.log( user1[key] );
+// }
 
-function updateDate (dateOfBirht) {
-    this.dateOfBirht = dateOfBirht;
-}
+// function updateDate (dateOfBirht) {
+//     this.dateOfBirht = dateOfBirht;
+// }
 
-user1.f = updateDate;
-user1.f('24.10.2018');
+// user1.f = updateDate;
+// user1.f('24.10.2018');
 
-for (let key in user1) {
-    console.log( user1[key] );
-}
+// for (let key in user1) {
+//     console.log( user1[key] );
+// }
+
+
+// Преобразование объектов
+
+// let user = {
+//     name: "John",
+//     money: 1000,
+  
+//     [Symbol.toPrimitive](hint) {
+//       alert(`hint: ${hint}`);
+//       return hint == "string" ? `{name: "${this.name}"}` : this.money;
+//     }
+//   };
+  
+//   // демонстрация результатов преобразований:
+//   alert(user); // hint: string -> {name: "John"}
+//   alert(+user); // hint: number -> 1000
+//   alert(user + 500); // hint: default -> 1500
+
+// let user = {
+//     name: 'Angel',
+//     age: 22,
+//     money: 0,
+//     happy: 'very',
+
+//     // valueOf() {
+//     //     return this.money;
+//     // },
+
+//     // toString() {
+//     //     return this.name;
+//     // },
+    
+
+//     // [Symbol.toPrimitive](hint) {
+//     //     alert (hint);
+//     //     return hint == 'string' ? this.name : this.age;
+//     // },
+// }
+
+// alert (user);
+// alert (+user);
