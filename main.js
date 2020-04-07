@@ -1117,16 +1117,15 @@ Boolean ( str ); булево значение
 // alert( `Mul = ${calculator.mul()}` );
 
 function Accumulator(startingValue) {
-    let num = null;
-    let sum = null;
-    this.read = function() {
-        num = +prompt('Введите ваше число','2');
-        sum = sum + num;
+    this.value = +startingValue;
+    this.read = function () {
+        this.value += +prompt ('Введите Ваше число','');
     }
-    
-    this.value = sum + startingValue;
 }
 
-let accumulator = new Accumulator(1)
-accumulator.read();
-alert(accumulator.value);
+let accumulator = new Accumulator(1); // начальное значение 1
+
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений
