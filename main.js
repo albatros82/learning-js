@@ -1058,3 +1058,75 @@ Boolean ( str ); булево значение
 
 // alert (user);
 // alert (+user);
+
+
+// Конструктор создания объектов через new;
+
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.isAdmin = false;
+//     this.sayHi = function() {
+//         return `Привет, меня зовут - ${this.name}`;
+//     } 
+// }
+
+// let user = new User('Ivan', 22);
+
+// for (let key in user) {
+//     console.log (key + ': ' + user[key]);
+// }
+
+// alert ( user.sayHi() );
+
+// let obj = {};
+
+// function A() {
+//     return obj;
+// }
+
+// function B() {
+//     return obj;
+// }
+
+// let a = new A;
+// let b = new B;
+
+// alert ( a == b );
+
+// function Calculator(){
+//     let a = null;
+//     let b = null;
+//     this.read = function() {
+//         a = +prompt ('Введите ваши данные а','');
+//         b = +prompt ('Введите ваши данные б','');
+//     }
+//     this.sum = function() {
+//         return a + b;
+//     }
+
+//     this.mul = function() {
+//         return a * b;
+//     }
+// }
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// alert( `Sum = ${calculator.sum()}` );
+// alert( `Mul = ${calculator.mul()}` );
+
+function Accumulator(startingValue) {
+    let num = null;
+    let sum = null;
+    this.read = function() {
+        num = +prompt('Введите ваше число','2');
+        sum = sum + num;
+    }
+    
+    this.value = sum + startingValue;
+}
+
+let accumulator = new Accumulator(1)
+accumulator.read();
+alert(accumulator.value);
