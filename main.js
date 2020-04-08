@@ -1,3 +1,14 @@
+// Методы примитивов
+
+// str.toUpperCase() - возвращает строку в верхнем регистре
+// let str = 'Привет';
+// alert ( str.toUpperCase() ); // ПРИВЕТ
+
+// toFixed(n) округляет число до n знаков после запятой.
+// let n = 1.23456;
+// alert( n.toFixed(2) ); // 1.23
+
+
 // встроенные функции и методы:
 
 // .toString(); - явное преобразование в строку
@@ -1116,16 +1127,27 @@ Boolean ( str ); булево значение
 // alert( `Sum = ${calculator.sum()}` );
 // alert( `Mul = ${calculator.mul()}` );
 
-function Accumulator(startingValue) {
-    this.value = +startingValue;
-    this.read = function () {
-        this.value += +prompt ('Введите Ваше число','');
-    }
-}
+// function Accumulator(startingValue) {
+//     this.value = +startingValue;
+//     this.read = function () {
+//         this.value += +prompt ('Введите Ваше число','');
+//     }
+// }
 
-let accumulator = new Accumulator(1); // начальное значение 1
+// let accumulator = new Accumulator(1); // начальное значение 1
 
-accumulator.read(); // прибавит ввод prompt к текущему значению
-accumulator.read(); // прибавит ввод prompt к текущему значению
+// accumulator.read(); // прибавит ввод prompt к текущему значению
+// accumulator.read(); // прибавит ввод prompt к текущему значению
 
-alert(accumulator.value); // выведет сумму этих значений
+// alert(accumulator.value); // выведет сумму этих значений
+
+
+
+// Методы примитивов
+
+// str.toUpperCase() - возвращает строку в верхнем регистре
+// let str = 'Привет';
+// alert ( str.toUpperCase() ); // ПРИВЕТ
+
+// let n = 1.23456;
+// alert( n.toFixed(2) ); // 1.23
