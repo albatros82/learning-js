@@ -1219,3 +1219,112 @@ Boolean ( str ); булево значение
 // Во всех других случаях Object.is(a, b) идентичен a === b.
 // alert ( Object.is(5, 4) === true ); //false
 // alert ( Object.is(NaN, NaN) === true ); //true
+
+// parseInt и parseFloat
+// alert (parseInt('100px')); //возвращает целое чилсо
+// alert (parseFloat('12.5$')); //возвращает число с плавающей запятой
+// Функции parseInt/parseFloat вернут NaN, если не смогли прочитать ни одну цифру:
+// alert (parseInt('a123px'))// NaN, на первом символе происходит остановка чтения
+// не обязательный второй аргумент parseInt(str, radix) radix определяет систему счисления
+// alert( parseInt('0xff',16 )) //255
+// alert( parseInt('2n9c', 36)) //123456
+
+// alert( (Math.random() * 10).Math.round());
+// alert ( Math.round( Math.random() * 10 ) );
+// alert (Math.random().toFixed(2) * 100);
+
+// Math.min( a,b,c ) / Math.max( a,b,c ); //возвращает мин и макс аргумент из перечисленных
+// alert( Math.min(4, 5, 1, -1) )
+// alert( Math.max(5, 8, 9, 15, 55) )
+
+// Math.pow(n, power) возводит число n в степень power
+// alert( Math.pow(2, 5) )
+
+// alert( 1.35.toFixed(1) );
+// alert( Math.round( (6.35 * 10) ) / 10 );
+
+
+// function readNumber() {
+//     let num = null;
+//     do {
+//         num = prompt ('data','');
+//     } while( !isFinite(num) );
+//     if (num == null || num == '') return null;
+//     return +num;
+// }
+
+// alert (`Число: ${readNumber()}`);
+
+// function random(min, max) {
+//     let result = min + Math.random() * (max - min);
+//     return Math.round(result);
+// }
+// alert (random(2, 5));
+
+// function random (min, max) {
+//     let result = min + Math.random() * ( (1 + max)- min);
+//     return Math.floor(result);
+// }
+// alert (random(1, 5));
+
+
+// Строки
+
+// let guestList = `Guest:
+// *John
+// *Nina
+// *Mike
+// `;
+// alert(guestList);
+
+// let guestList = 'Guest:\n * Peter\n * Rita'
+// alert( guestList );
+
+// let str1 = 'Hello\nWorld';
+// let str2 = `Hello
+// World`;
+// alert( str1 == str2 );
+
+// свойство length
+// alert( `My\n`.length );//3
+
+
+// доступ к символам
+// let str = 'Hello';
+
+// получаем первый символ
+// alert( str[0] );//'H'
+
+// также можно получить с помощью метода charAt(pos);
+// alert( str.charAt(0) );'H'
+
+// получаем последний символ
+// alert( str[str.length -1] );'o'
+
+// Разница только в том, что если символ с такой позицией отсутствует, 
+// тогда [] вернёт undefined, а charAt — пустую строку:
+// alert( str[1000] ); //undefined
+// alert( str.charAt(100) ); // ''
+
+// for..of
+// for (let char of str) {
+//     alert( char );
+// }
+
+// for (let char of 'What you say mather fucker?') {
+//     alert( char );
+// }
+
+// let str = 'Долихвать';
+// alert (`
+//     ${str[2]}
+//     ${str[1]}
+//     ${str[4]}`
+// );
+
+// let str ='Hello Moto';
+// for (let char of str) {
+//     if (char === ' ') alert ( 'ПРОБЕЛ' );
+//     if (char === ' ') continue;
+//     alert( char );
+// }
