@@ -1,14 +1,12 @@
+// Проверка в if
+// Просто запомните: if (~str.indexOf(…)) означает «если найдено».
+
 // Методы примитивов
 
 // num.toString(base) возвращает строковое представление числа num в системе счисления base.
 // base - 16(цвета(ff)), 2(двоичная), 36(все символы);
 // если метод toString() вызывается сразу на числе то ставятся 2-е точки 
 // (15466..toString(2)) 
-
-
-
-
-
 
 // str.toUpperCase() - возвращает строку в верхнем регистре
 // let str = 'Привет';
@@ -1328,3 +1326,165 @@ Boolean ( str ); булево значение
 //     if (char === ' ') continue;
 //     alert( char );
 // }
+
+// let str = 'Привет Маша';
+// for (let i = 0; i < str.length; i++) {
+//     if( str[i] == ' ') break;
+//     alert( `буква ${str[i]}` );
+// }
+
+// function viewStr(str) {
+//     let word ='';
+//     for (let i = 0; i < str.length; i++) {
+//         if( str[i] == ' ') continue;
+//         word += `${str[i]}\p`;
+//     }
+//     return word;
+// }
+
+// alert (viewStr('Привет') );
+
+
+
+// Изменение регистра
+// методы toLowerCase() и toUpperCase() меняют регистр символов
+// console.log( 'interface'.toUpperCase() ); //выводит в верхнем регистре
+// console.log( 'INTERFACE'.toLowerCase() ); //выводит в нижнем регистре
+
+// для перевода конкретного символа можно обратится к нему по индексу
+// console.log( 'Interface'[0].toLowerCase() ); //i
+
+
+
+// поиск подстрок
+
+// str.indexOf(substr, pos); ищет substr в str начиная с позиции pos и возвращает позицию, на каторой распологается совпадение, 
+// либо -1 при отсутсвии совпадений
+
+// lastIndexOf(substr, position) ищет с конца строки к ее началу)
+
+// let str = 'Привет';
+// alert( str.indexOf('Привет') ); //0 потому что строка найдена 
+// alert( str.indexOf('ПРИВЕТ') ); //-1 совпадений нет
+// alert( str.indexOf('вет') ); //совпадение на 3 позиции
+
+// indexOf в цикле
+// let str = 'Ослик Иа-Иа посмотрел на виадук';
+// let target = 'Иа'; // цель поиска
+// let pos = 0;
+// while(true) {
+//     let foundPos = str.indexOf(target, pos);
+//     if (foundPos == -1) break;
+//     alert( `Найдено тут: ${foundPos}` );
+//     pos = foundPos + 1;// начинаем с следующей позиции
+// }
+
+// let str = 'Hello Moto';
+// let target = 'o';
+// let pos = 0;
+// while(true) {
+//     let foundpos = str.indexOf(target, pos);
+//     if (foundpos == -1) break;
+//     alert(`Найдено тут ${foundpos}`);
+//     pos = foundpos + 1;
+// };
+
+// let str = 'Widget with id';
+// // if( str.indexOf('Widget') ){
+// //     alert( 'Совпадение найдено');
+// // }
+// // не будет работать! потомучто widget вернет 0 это не true нужно делать провеку на -1;
+// if( str.indexOf('Widget') !=-1) {
+//     alert(str.indexOf('Widget'));
+//     alert('Совпадение найдено!');
+// }
+// Просто запомните: if (~str.indexOf(…)) означает «если найдено».
+
+
+
+// Методы includes, startsWith, endsWith
+// str.includes(substr, pos) возвращает true если находит substr и false если не находит
+// pos определаяет позицию с которой нужно вести поиск
+
+// Методы str.startsWith и str.endsWith проверяют, соответственно, начинается ли и заканчивается ли строка определённой строкой:
+// alert( "Widget".startsWith("Wid") ); // true, "Wid" — начало "Widget"
+// alert( "Widget".endsWith("get") ); // true, "get" — окончание "Widget
+
+
+// Получение подстроки
+// 3 метода substring, substr, slice - предпочтительнее
+
+// str.slice(start [, end]); возвращает часть строки  от start (не включая) end.
+// let str = 'stringfity'
+// alert( str.slice(0, 6) );//string
+// если end отсутствует slice возвращает все символы до конца с pos
+// alert( str.slice(2) );
+// Также для start/end можно задавать отрицательные значения. 
+// alert( str.slice(-4, -1) ); // fit
+
+// for (let i = -1; i > ~str.length; i--) {
+//     alert (str.slice(i));
+// }
+
+// let string = str.slice(0, 6);
+// alert( string );
+
+
+
+// str.codePointAt(pos) метод позволяющий получить код символа
+// alert ( 'z'.codePointAt() ); //122
+// alert ('9'.codePointAt() );
+
+// String.fromCodePoint(code) // создает символ по его коду
+
+// alert( String.fromCodePoint(122) ); //z
+
+// let str = '';
+// for(let i = 65; i <= 220; i++){
+//     str += String.fromCodePoint(i); 
+// }
+// alert( str );
+
+
+// str.trim() — убирает пробелы в начале и конце строки.
+
+// substr(start, length)	length символов, начиная от start	значение start может быть отрицательным
+
+
+// function ucFirst(str){
+//     str = str.trim();
+//     return str[0].toUpperCase() + str.slice(1);
+// }
+// alert( ucFirst(' привет ') );
+
+// let tar1 = 'viagra';
+// let tar2 = 'XXX';
+
+// function checkSpam(str){
+//     str = str.toLowerCase();
+//     tar1 = tar1.toLowerCase();
+//     tar2 = tar2.toLowerCase();
+//     return str.includes(tar1) || str.includes(tar2);
+// }
+
+// alert( checkSpam('buy ViAgRA now') == true );
+// alert( checkSpam('free xxxxx') == true );
+// alert( checkSpam("innocent rabbit") == false );
+
+
+// function truncate(str, maxlength) {
+//     if( str.length > maxlength ) {
+//         return str.slice(0, maxlength -1) + '\u2026';
+//     } else {
+//         return str;
+//     }
+// }
+
+// alert( truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) );
+// alert( truncate("Всем привет!", 20));
+
+// function extractCurrencyValue(str) {
+//     return +str.slice(1)
+// }
+
+// alert( extractCurrencyValue('$120') === 120 ); // true
