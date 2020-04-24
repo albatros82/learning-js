@@ -1,3 +1,31 @@
+
+
+
+// Строки
+
+// для вывода символа строки
+// str[0] номерация начинается с 0
+
+// нижний регистр 
+// str.toLowwerCase()
+// верхний регистр
+// str.toUpperCase()
+
+// для поиска подстроки
+// str.includes(substr, pos) // возвращает true/false 
+// str.indexOf(substr, pos) // возвращает номер позиции или -1 если не находит substr
+
+// вернуть подстроку 
+// str.slice(start, end) возвращает символы от start до end
+// str.substr(start, length) возвращает с start длиной length 
+
+// коды символов
+// str.codePointAt(pos) возвращает код символа из str позиции pos (начало с 0)
+// String.fromCodePoint(code) создаёт символ по коду (code)
+
+
+
+
 // Проверка в if
 // Просто запомните: if (~str.indexOf(…)) означает «если найдено».
 
