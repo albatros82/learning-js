@@ -1590,7 +1590,7 @@ Boolean ( str ); булево значение
 // Методы push и unshift могут добавлять сразу несколько элементов:
 // __________________________________________________
 
-let veg = ["Огурец", "Свекла", "Тыква"];
+// let veg = ["Огурец", "Свекла", "Тыква"];
 // alert( veg.shift() );
 // alert( veg.pop() );
 // veg[0] = "Томат";
@@ -1619,3 +1619,30 @@ let veg = ["Огурец", "Свекла", "Тыква"];
 // for (let item of veg) {
 //     alert( item )
 // };
+
+// let styles =["Джаз", "Блюз"];
+// alert( styles );
+// styles.push('Рок-н-Ролл');
+// alert( styles );
+// let middle = Math.floor(styles.length / 2);
+// styles[middle] = 'Классика';
+// alert( styles );
+// alert( styles.shift() );
+// styles.unshift( "Рэп", "Регги" );
+// alert( styles );
+
+// function sumInput() {
+//     let arr = [];
+//     let sum = 0;
+//     while(true) {
+//         let num = prompt('Введите Ваше число');
+//         if (isNaN(num) == true || num == null || num == '') break;
+//         arr.push(num);
+//     }
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += +arr[i];
+//     }
+//     return sum;
+// }
+// alert( sumInput() );
+
