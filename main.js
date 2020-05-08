@@ -1743,5 +1743,3 @@ Boolean ( str ); булево значение
 // };
 
 // alert( arr.concat(arrayLike) );
-
-
