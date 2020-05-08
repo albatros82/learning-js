@@ -1743,3 +1743,23 @@ Boolean ( str ); булево значение
 // };
 
 // alert( arr.concat(arrayLike) );
+
+
+
+// Метод перебор: forEach
+// ____________________________________
+// синтаксис arr.forEach(function(item, inddex, array)){
+    // что-то делать с item
+// }
+
+// выводить alert для каждого элемента
+// ['Blue', 'Red', 'Green'].forEach( alert );
+
+// выводить имя и позицию и в каком массиве
+// ['Blue', 'Red', 'Green'].forEach((item, index, array) => {
+//     alert(`${item} имеет индекс ${index} в массиве ${array}`);
+// });
+
+// ["Test"].forEach(function (item, index, array) {
+//     alert(`${item} ${index} ${array}`);
+// });
