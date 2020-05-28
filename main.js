@@ -1763,3 +1763,99 @@ Boolean ( str ); булево значение
 // ["Test"].forEach(function (item, index, array) {
 //     alert(`${item} ${index} ${array}`);
 // });
+
+
+
+// Поиск в массиве методы indexOf/lastIndex и includes
+// ___________________________________________________
+// Работают также как и строковые
+// arr.indexOf(item, from) ищет item, начиная с индекса from, и возвращает индекс, на котором был найден искомый элемент, в противном случае -1.
+// arr.lastIndexOf(item, from) – то же самое, но ищет справа налево.
+// arr.includes(item, from) – ищет item, начиная с индекса from, и возвращает true, если поиск успешен.
+
+// let arr = [1, 0, false];
+
+// alert( arr.indexOf(0) ); //1
+// alert( arr.indexOf(false) ); //2
+// alert( arr.indexOf(null) ); //-1
+// alert( arr.includes(null) ); //false
+// alert( arr.includes(1) ); //true
+
+// let arr2 = [NaN];
+// alert( arr2.includes(NaN) ); //true Правильно обробатывает NaN
+
+
+
+// find и findIndex
+// _________________
+// let result = arr.find(function(item, index, array) {
+//     если true - возвращается текущий элемент и перебор прерывается
+//     если все итерации оказались ложными, возвращается undefined
+// });
+
+// let users = [
+//     {id: 1, name: 'Ivan'},
+//     {id: 2, name: 'Petr'},
+//     {id: 3, name: 'Masha'},
+// ]
+
+// let user = users.find(item => item.id == 1);
+// alert( user.name );
+
+
+
+// --------------------------------------------------------------
+// let fruits = ['Apple','Mango','Cherry',{name: 'Lucas'}];
+// fruits[1] = 'Tomato';
+// fruits.push( () => alert('Привет') );
+
+// for(let i = 0; i < fruits.length; i++) {
+//     console.log( typeof fruits[i] );
+// }
+
+// for( let i = 0; i < fruits.length; i++ ) {
+//     if( typeof fruits[i] == 'object' ){
+//         for( let key in fruits[i] ) {
+//             alert( `${key}: ${fruits[i][key]}` );
+//         }
+//     }
+//     if( typeof fruits[i] == 'function' ) {
+//         fruits[i]();
+//     }
+//     if( typeof fruits[i] == 'string') {
+//         alert( fruits[i] );
+//     }
+// }
+
+
+// let styles = ['Jazz', 'Blues'];
+// styles.push('Rock-n-Roll');
+// styles[ Math.floor(styles.length / 2) ] = 'Classic';
+// alert( Math.floor(styles.length / 2) );
+// alert( styles.shift() );
+// styles.unshift( 'Rep','Raggy' );
+
+// alert( styles );
+
+// function sumInput() {
+//     let arr = [];
+//     while(true) {
+//         let num = prompt('Введите значение','');
+//         if( isNaN(num) == true || num == null || num.trim() == '') break;
+//         arr.push(num);
+//     }
+
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         sum += +arr[i];
+//     }
+//     alert( sum );
+//     alert( arr.length );
+// }
+
+// sumInput();
+
+let arr = [1, 2];
+
+alert( arr.concat([3,4], [5,6], [7,8], 9, 10) );
+alert( arr );
