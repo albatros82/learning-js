@@ -1,4 +1,33 @@
-// Массивы 
+// Шпаргалка по методам массива:
+
+//+++++++ Для добавления/удаления элементов:
+// push (...items) – добавляет элементы в конец,
+// pop() – извлекает элемент с конца,
+// shift() – извлекает элемент с начала,
+// unshift(...items) – добавляет элементы в начало.
+// splice(pos, deleteCount, ...items) – начиная с индекса pos, удаляет deleteCount элементов и вставляет items.
+// slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end).
+// concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items. Если какой-то из items является массивом, тогда берутся его элементы.
+
+//++++++ Для поиска среди элементов:
+// indexOf/lastIndexOf(item, pos) – ищет item, начиная с позиции pos, и возвращает его индекс или -1, если ничего не найдено.
+// includes(value) – возвращает true, если в массиве имеется элемент value, в противном случае false.
+// find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все значения, при прохождении которых через функцию возвращается true.
+// findIndex похож на find, но возвращает индекс вместо значения.
+// Для перебора элементов:
+
+// forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
+// Для преобразования массива:
+
+// map(func) – создаёт новый массив из результатов вызова func для каждого элемента.
+// sort(func) – сортирует массив «на месте», а потом возвращает его.
+// reverse() – «на месте» меняет порядок следования элементов на противоположный и возвращает изменённый массив.
+// split/join – преобразует строку в массив и обратно.
+// reduce(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и передавая промежуточный результат между вызовами.
+// Дополнительно:
+
+// Array.isArray(arr) проверяет, является ли arr массивом.
+
 
 // Методы
 
@@ -1793,69 +1822,277 @@ Boolean ( str ); булево значение
 //     если все итерации оказались ложными, возвращается undefined
 // });
 
+// item – очередной элемент.
+// index – его индекс.
+// array – сам массив.
+
+
 // let users = [
 //     {id: 1, name: 'Ivan'},
 //     {id: 2, name: 'Petr'},
 //     {id: 3, name: 'Masha'},
-// ]
+// ];
 
-// let user = users.find(item => item.id == 1);
+// let user = users.find( item => item.id == 1 );
 // alert( user.name );
 
 
-
-// --------------------------------------------------------------
-// let fruits = ['Apple','Mango','Cherry',{name: 'Lucas'}];
-// fruits[1] = 'Tomato';
-// fruits.push( () => alert('Привет') );
-
-// for(let i = 0; i < fruits.length; i++) {
-//     console.log( typeof fruits[i] );
-// }
-
-// for( let i = 0; i < fruits.length; i++ ) {
-//     if( typeof fruits[i] == 'object' ){
-//         for( let key in fruits[i] ) {
-//             alert( `${key}: ${fruits[i][key]}` );
+// for(let i = 0; i < users.length; i++) {
+//     if(typeof users[i] == 'object') {
+//         for (let key in users[i]) {
+//             alert( key + users[i][key] );
 //         }
 //     }
-//     if( typeof fruits[i] == 'function' ) {
-//         fruits[i]();
+// };
+
+
+
+// filter - для поиска множества элементов,
+// возвращает массив из всех подходящих элементов
+// _______________________________________
+
+// let user = users.filter( item => item.id < 3 );
+
+// item – очередной элемент.
+// index – его индекс.
+// array – сам массив.
+
+// alert( user.length );
+
+// for(let i = 0; i < user.length; i++) {
+//     if(typeof users[i] == 'object') {
+//         for (let key in user[i]) {
+//             alert( `${key}: ${user[i][key]}` );
+//         }
 //     }
-//     if( typeof fruits[i] == 'string') {
-//         alert( fruits[i] );
-//     }
+// };
+
+
+
+// map - преобразование массива.
+// _____________________________
+
+// item – очередной элемент.
+// index – его индекс.
+// array – сам массив.
+
+
+// let arr = ['Bingo','Pluto','Hard','Metall'];
+// let lengths = arr.map( item => item.length );
+// alert(lengths);
+
+
+// sort(fn) сортирует массив на месте (не нужно создавать новую переменную),
+// меняя в нем порядок элементов.
+
+// let arr =[1, 2, 3, 4, 5, 11, 12, 13, 6];
+// arr.sort();
+// alert( arr );
+
+// // напишем фнкцию для сравнения чисел (просто запомнить)!
+// // let compare = function(a, b) {
+// //     if( a > b ) return 1;
+// //     if( a == b) return 0;
+// //     if( a < b ) return -1;
+// // };
+// // или для числовых значений
+// let compare = function(a,b) {
+//     return a - b;
+// }
+
+// более короткая запись с стрелочной функцией
+// let compare = (a, b) => a - b;
+
+// alert( arr.sort(compare) ); //отсортировали массив по возрастанию
+
+// let items = [
+//     {name: 'Jesica', value: 21},
+//     {name: 'Sharpe', value: 22},
+//     {name: 'Ziga', value: 23},
+//     {name: 'Ivan', value: 12},
+// ];
+
+// создадим фун сортировка по имени
+// let sortName = function(a, b) {
+//     if( a.name > b.name ) return 1;
+//     if( a.name < b.name ) return -1;
+//     return 0;
+// };
+// применим функцию
+// items.sort(sortName);
+
+// или можно сделать анонимную функцию
+// items.sort( (a, b) => {
+//     if( a.name > b.name ) return 1;
+//     if( a.name < b.name ) return -1;
+//     return 0;
+// } );
+
+// for( let i = 0; i < items.length; i++ ) {
+//     alert( items[i].name );
+// };
+
+
+
+// reverse - меняет порядок элементов на обратный - меняет массив на месте!!!
+// ______________________________________________
+// let arr =[1, 2, 3, 4, 5, 7, 9, 12, 6];
+// arr.reverse();
+// alert( arr );
+
+
+
+// split и join
+// ____________
+
+// str.split(delim) - разбивает строку (str) на массив по значению (delim)
+
+// let names = 'Вася, Петя, Маша';
+// let arr = names.split(',');
+// for( let name of arr) {
+//     alert( `Сообщение получат: ${name}`);
+// }
+
+// не обязательный второй аргумент у метода - ограничение на кол-во эл-в в массиве
+
+// let names = 'Вася, Петя, Маша';
+// let arr = names.split(', ', 2);
+// for( let name of arr) {
+//     alert( `Сообщение получат: ${name}`);
 // }
 
 
-// let styles = ['Jazz', 'Blues'];
-// styles.push('Rock-n-Roll');
-// styles[ Math.floor(styles.length / 2) ] = 'Classic';
-// alert( Math.floor(styles.length / 2) );
-// alert( styles.shift() );
-// styles.unshift( 'Rep','Raggy' );
+// str.split(s) - с пустым аргументом '' - s разбил бы строку на массив букв
+// ---------------------------------------------------------------------
+// let str = 'Привет москвичи и москвички';
+// let arr = str.toLowerCase().split('');
+// alert(typeof arr );
 
-// alert( styles );
 
-// function sumInput() {
-//     let arr = [];
-//     while(true) {
-//         let num = prompt('Введите значение','');
-//         if( isNaN(num) == true || num == null || num.trim() == '') break;
-//         arr.push(num);
-//     }
+// arr.join(glue) - объеденит массив в строку через glue
+// -----------------------------------------------------
+// let arr = ['Вася','Петя','Ира','Гена'];
+// let str = arr.join('; ');
+// alert( str + ' ' + '- ' + typeof str );
 
-//     let sum = 0;
-//     for(let i = 0; i < arr.length; i++) {
-//         sum += +arr[i];
-//     }
-//     alert( sum );
-//     alert( arr.length );
+
+
+// reduce/reduceRight
+// -------------------
+
+// let value = arr.reduce(function(previousValue, item, index, array) {
+//     // ...
+//   }, [initial]);
+
+// previousValue – результат предыдущего вызова этой функции, равен initial при первом вызове (если передан initial),
+// item – очередной элемент массива,
+// index – его индекс,
+// array – сам массив.
+
+// let arr = [1, 2, 3, 4, 5];
+// alert( arr.reduce((sum, item) => sum + item, 10) ); //10 как первое значение 
+// можно не писать, тогда счет начнется с первого знач массива
+
+
+// Array.isArray - для определения массива
+// ---------------------------------------
+// let arr = [1, 2, 3];
+// alert( Array.isArray(arr) ); //true
+
+
+// +++++++++++++++++++++++++++++++++++++++
+
+// function camelize( str ) {
+//     return str
+//     .split('-')
+//     .map(
+//         (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+//     )
+//     .join('');
 // }
 
-// sumInput();
+// alert (camelize("background-color"));
 
-let arr = [1, 2];
+// ++++++++++++++++++++++++++++++++++++++++
+// function filterRange( arr, a, b ) {
+//     return arr.filter( item => item = a && item <= b);
+// }
 
-alert( arr.concat([3,4], [5,6], [7,8], 9, 10) );
+// let arr = [5, 3, 8, 1];
+// let filtered = filterRange( arr, 1, 4 );
+// alert( filtered );
+// alert( arr );
+//++++++++++++++++++++++++++++++++++++++++++
+
+// function filterRangeInPlace( arr, a, b ) {
+//     for( let i = 0; i < arr.length; i++) {
+//         let val = arr[i];
+//         if( val < a || val > b ) {
+//             arr.splice(i, 1);
+//         }
+//     }
+// };
+
+// let arr = [5, 3, 8, 1];
+// filterRangeInPlace( arr, 1, 4 );
+// alert( arr );
+// +++++++++++++++++++++++++++++++++++++++++
+
+// let arr = [5, 2, 1, -10, 8];
+// arr.sort( (a, b) => a - b ).reverse();
+// alert( arr );
+// +++++++++++++++++++++++++++++++++++++++++
+
+// function compare(a, b) {
+//     if( a > b ) return 1;
+//     if( a < b ) return -1;
+//     return 0;
+// };
+
+// function copySorted(arr) {
+//     return arr.slice().sort(compare);
+// }
+
+// let arr = ['HTML', 'JavaScript', 'CSS'];
+// let sorted = copySorted(arr);
+// alert( sorted );
+// alert( arr );
+// +++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+// Конструктор создания объектов через new;
+
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.isAdmin = false;
+//     this.sayHi = function() {
+//         return `Привет, меня зовут - ${this.name}`;
+//     } 
+// }
+
+// function Calculator(str){
+//     return str.split(' ');
+// }
+
+let arr = ['1', '-', '2'];
+for(let i = 0; i < arr.length; i++){
+    let val = arr[i];
+    if( val == '+' ) {
+        let arr2 = arr.slice();
+        arr2.splice(i, 1);
+        let arr3 = arr2.map(item => +item);
+        alert(arr3.reduce( (sum, item) => sum + item) );
+    }
+    if( val == '-' ) {
+    let arr2 = arr.slice();
+    arr2.splice(i, 1);
+    let arr3 = arr2.map(item => +item);
+    alert(arr3.reduce( (sum, item) => sum - item) );
+    }
+};
+
 alert( arr );
