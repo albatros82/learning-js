@@ -2078,21 +2078,84 @@ Boolean ( str ); булево значение
 //     return str.split(' ');
 // }
 
-let arr = ['1', '-', '2'];
-for(let i = 0; i < arr.length; i++){
-    let val = arr[i];
-    if( val == '+' ) {
-        let arr2 = arr.slice();
-        arr2.splice(i, 1);
-        let arr3 = arr2.map(item => +item);
-        alert(arr3.reduce( (sum, item) => sum + item) );
-    }
-    if( val == '-' ) {
-    let arr2 = arr.slice();
-    arr2.splice(i, 1);
-    let arr3 = arr2.map(item => +item);
-    alert(arr3.reduce( (sum, item) => sum - item) );
-    }
-};
+// let arr = ['1', '-', '2'];
+// for(let i = 0; i < arr.length; i++){
+//     let val = arr[i];
+//     if( val == '+' ) {
+//         let arr2 = arr.slice();
+//         arr2.splice(i, 1);
+//         let arr3 = arr2.map(item => +item);
+//         alert(arr3.reduce( (sum, item) => sum + item) );
+//     }
+//     if( val == '-' ) {
+//     let arr2 = arr.slice();
+//     arr2.splice(i, 1);
+//     let arr3 = arr2.map(item => +item);
+//     alert(arr3.reduce( (sum, item) => sum - item) );
+//     }
+// };
 
-alert( arr );
+// alert( arr );
+
+// повторю методы подзабыл----------------------------
+
+// splice
+// let arr = [1, 2, 3];
+// arr.splice(1, 1); // удалили 1 элемент, но можно и добавить
+// arr.splice(1, 0, 2);
+// arr.splice(3, 0, 4, 5, 6); // добавили к массиву
+// alert( arr );
+
+// slice - возвращает подмассив не меняя его
+// let arr = [1, 2, 3, 4, 5];
+// alert (arr.slice(0, 3) );
+// alert( arr );
+
+// concat (соединяет массив из аргументов)
+// let arr = [1, 2, 3, 4, 5];
+// alert( arr.concat(6, 7) );
+
+// forEach
+// let arr = [1, 2, 3, 4];
+// arr.forEach( (item, index)  => alert( `${item} ${index}` ) );
+
+// indexOf и includes используют точное сравнение === 
+// let arr = [1, 0, false];
+// alert( arr.indexOf(0) ); //1
+// alert( arr.indexOf(false) ); //2 - потому что нашел именно false а не 0, из-за точного сравнения
+// alert( arr.indexOf(null) ); //-1
+// alert( arr.includes(1) ); //true
+
+// let result = arr.find(function(item, index, array) {
+//     // если true - возвращается текущий элемент и перебор прерывается
+//     // если все итерации оказались ложными, возвращается undefined
+// });
+
+
+// let users = [
+//     {id: 1, name: 'John'},
+//     {id: 2, name: 'Kaster'},
+//     {id: 3, name: 'Juddy'},
+// ]
+
+// let user = users.find ( item => item.id == 1 );
+// alert( `id user = ${user.id}
+// name user = ${user.name}` );
+
+
+// перебор объектов в массиве по ключу и значению
+// let user = users.findIndex( item => item.name == 'Juddy' );
+// alert( user );
+// for( let i = 0; i < users.length; i++) {
+//     for( let key in users[i] ) {
+//         alert( key + users[i][key] )
+//     }
+// }
+
+
+//map
+
+let arr = [1, 2, 3, 4, 5, 6];
+
+let result = arr.map(item => item ** 2);
+alert( result );
