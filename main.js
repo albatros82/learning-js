@@ -2155,7 +2155,80 @@ Boolean ( str ); булево значение
 
 //map
 
-let arr = [1, 2, 3, 4, 5, 6];
+// let arr = [1, 2, 3, 4, 5, 6];
+// let arr2 =[7, 8];
 
-let result = arr.map(item => item ** 2);
-alert( result );
+// let result = arr
+// .map(item => item ** 2)
+// .concat(arr2);
+// alert( result );
+
+
+// sort(fn) - сортирует массив на месте!!!
+
+// let arr = [1, 2, 4, 5, 12, 31, 22]
+// arr.sort( (a, b) => a - b );
+// alert( arr );
+
+
+// split - разделяет строку на массив
+
+// let names = 'Вася, Петя, Маша';
+// let arr = names.split(',');
+// alert( arr );
+
+// for (let i = 0; i < arr.length; i++) {
+//     alert(`Сообщение получат ${arr[i]}`);
+// }
+
+// let str = 'Тестирование ПО пустая трата времени';
+// let arr = str.split(' ');
+// console.log( arr );
+
+// join собирает строку в массив обратно
+
+// alert( arr.join(' ') );
+
+// let str = 'Как много людей живёт на планете земля';
+// let arr = (str + ' около 6 миллиардов').split(' ')
+// console.log( arr );
+
+// let strNew = arr.join('-');
+// console.log( strNew );
+
+// reduce
+
+// let str = 'Привет';
+// let arr = str.split('');
+// console.log( arr.reduce( (sum, current) => sum + current) );
+
+// let arrNum = [1, 2, 3, 4, 5, 6, -48];
+// console.log( arrNum.reduce( function (sum, item) {
+//     return sum + item;
+// }));
+
+// alert( Array.isArray([]) ); //true т.к. это массив
+// alert( Array.isArray({}) ); //false т.к. это объект
+
+// let army = {
+//     minAge: 18,
+//     maxAge: 27,
+//     canJoin(user) {
+//         return user.age > this.minAge && user.age < this.maxAge;
+//     }
+// }
+
+// let users = [
+//     {age: 16},
+//     {age: 20},
+//     {age: 23},
+//     {age: 30},
+// ]
+
+// let soldiers = users.filter( army.canJoin, army );
+// console.log( Array.isArray(soldiers) );
+// for( let i = 0; i < soldiers.length; i++) {
+//     console.log( soldiers[i] );
+// }
+
+// filter и map поподробнее изучить!!!
