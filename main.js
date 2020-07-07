@@ -2232,3 +2232,28 @@ Boolean ( str ); булево значение
 // }
 
 // filter и map поподробнее изучить!!!
+
+// let peoples = [
+//     {name: 'Igor', age: 22, cash: 1000},
+//     {name: 'Zoy', age: 88, cash: 600},
+//     {name: 'Ignat', age: 44, cash: 330},
+//     {name: 'Liberty',age: 44, cash: 100},
+// ]
+
+// // let pNew = peoples.map(item => item + item.cash );
+// // console.log( pNew );
+// let amount = peoples.reduce( (sum, item) => sum + item.cash, 0);
+// console.log( amount );
+
+// let newPeople = peoples.map(item => {
+//     return {
+//         info: `${item.name} (${item.age})`,
+//         cash: item.cash,
+//     }
+// })
+
+// console.log( newPeople );
+
+let str = 'background-color';
+let arr = str.split('-');
+console.log( arr );
