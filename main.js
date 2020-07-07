@@ -2254,6 +2254,47 @@ Boolean ( str ); булево значение
 
 // console.log( newPeople );
 
-let str = 'background-color';
-let arr = str.split('-');
-console.log( arr );
+// console.log(camelize('back-ground-color') );
+
+// function camelize(str) {
+//     return str
+//     .split('-')
+//     .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
+//     .join('');
+// }
+
+// let arr = [5, 3, 8, 1]
+
+// function filterRange(arr, a, b){
+//     return arr.filter((item) => item >= a && item < b) 
+// };
+
+// let filtered = filterRange(arr, 1, 4);
+// alert( filtered );
+// alert( arr );
+
+// function filterRangeInPlace(arr, a, b) {
+//     for(let i = 0; i < arr.length; i++ ){
+//         let val = arr[i];
+//         if( a <= val && val >= b ) {
+//             arr.splice(i, 1);
+//         }
+//     }
+// }
+
+
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// alert( arr ); // [3, 1]
+
+// arr.sort( (a, b) => b - a );
+// alert( arr );
+
+// let arr = ["HTML", "JavaScript", "CSS"];
+
+// function copySorted(arr) {
+//     return arr.slice().sort();
+// }
+// let sorted = copySorted( arr );
+// alert( sorted );
+// alert( arr );
