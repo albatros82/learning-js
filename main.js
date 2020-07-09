@@ -2298,3 +2298,18 @@ Boolean ( str ); булево значение
 // let sorted = copySorted( arr );
 // alert( sorted );
 // alert( arr );
+
+
+function Calculator(){
+    this.calculate = function(str) {
+        if(str.includes('-')) {
+            this.arr = [];
+            this.arr = str.split(' - ');
+            return +this.arr[0] - +this.arr[1];
+        }
+    }
+}
+
+
+let calc = new Calculator;
+console.log(calc.calculate('40 - 5'));
