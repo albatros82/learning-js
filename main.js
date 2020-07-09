@@ -2303,7 +2303,6 @@ Boolean ( str ); булево значение
 function Calculator(){
     this.calculate = function(str) {
         if(str.includes('-')) {
-            this.arr = [];
             this.arr = str.split(' - ');
             return +this.arr[0] - +this.arr[1];
         }
