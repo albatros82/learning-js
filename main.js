@@ -2314,33 +2314,7 @@ Boolean ( str ); булево значение
 // console.log(calc.calculate('40 - 5'));
 
 
-// ========================
-function Calculator() {
 
-    this.methods = {
-      "-": (a, b) => a - b,
-      "+": (a, b) => a + b
-    };
-  
-    this.calculate = function(str) {
-  
-      let split = str.split(' '),
-        a = +split[0],
-        op = split[1],
-        b = +split[2]
-  
-      if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-        return NaN;
-      }
-  
-      return this.methods[op](a, b);
-    }
-  
-    this.addMethod = function(name, func) {
-      this.methods[name] = func;
-    };
-}
-// ==========================
 
 // let vasya = { name: "Вася", age: 25 };
 // let petya = { name: "Петя", age: 30 };
@@ -2397,6 +2371,38 @@ function Calculator() {
 
 // alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
+
+
+
+
+// ======================== это разобрать
+function Calculator() {
+
+    this.methods = {
+      "-": (a, b) => a - b,
+      "+": (a, b) => a + b
+    };
+  
+    this.calculate = function(str) {
+  
+      let split = str.split(' '),
+        a = +split[0],
+        op = split[1],
+        b = +split[2]
+  
+      if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+        return NaN;
+      }
+  
+      return this.methods[op](a, b);
+    }
+  
+    this.addMethod = function(name, func) {
+      this.methods[name] = func;
+    };
+}
+
+
 // function unique(arr) {
 //     let result = [];
 
@@ -2411,3 +2417,7 @@ function Calculator() {
 // let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
 
 // alert( unique(strings) ); // кришна, харе, :-O
+
+
+
+// ==========================
