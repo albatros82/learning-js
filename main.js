@@ -2300,15 +2300,114 @@ Boolean ( str ); булево значение
 // alert( arr );
 
 
-function Calculator(){
+// function Calculator(){
+//     this.calculate = function(str) {
+//         if(str.includes('-')) {
+//             this.arr = str.split(' - ');
+//             return +this.arr[0] - +this.arr[1];
+//         }
+//     }
+// }
+
+
+// let calc = new Calculator;
+// console.log(calc.calculate('40 - 5'));
+
+
+// ========================
+function Calculator() {
+
+    this.methods = {
+      "-": (a, b) => a - b,
+      "+": (a, b) => a + b
+    };
+  
     this.calculate = function(str) {
-        if(str.includes('-')) {
-            this.arr = str.split(' - ');
-            return +this.arr[0] - +this.arr[1];
-        }
+  
+      let split = str.split(' '),
+        a = +split[0],
+        op = split[1],
+        b = +split[2]
+  
+      if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+        return NaN;
+      }
+  
+      return this.methods[op](a, b);
     }
+  
+    this.addMethod = function(name, func) {
+      this.methods[name] = func;
+    };
 }
+// ==========================
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
 
 
-let calc = new Calculator;
-console.log(calc.calculate('40 - 5'));
+// let users = [vasya, petya, masha];
+// let usersName = users.map(item => item.name);
+
+// console.log(users);
+// console.log(usersName);
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [ vasya, petya, masha ];
+
+// let usersMapped = users.map(item => {
+//     return {
+//         id: item.id,
+//         fullName: `${item.name} ${item.surname}`,
+//     }
+// });
+
+// alert( usersMapped[0].id );
+// alert( usersMapped[0].fullName );
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let arr = [ vasya, petya, masha ];
+
+// function sortByAge(users) {
+//     users.sort((a, b) => a.age - b.age);
+// };
+
+// sortByAge(arr);
+
+// alert(arr[0].name); // Вася
+// alert(arr[1].name); // Маша
+// alert(arr[2].name); // Петя
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [ vasya, petya, masha ];
+
+// function getAverageAge(users) {
+//     return users.reduce((sum, item) => sum + item.age, 0) / users.length;
+// }
+
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+// function unique(arr) {
+//     let result = [];
+
+//     for(let str of arr) {
+//         if(!result.includes(str)) {
+//             result.push(str);
+//         }
+//     }
+//     return result;
+// }
+
+// let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
+
+// alert( unique(strings) ); // кришна, харе, :-O
