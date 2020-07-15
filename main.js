@@ -2097,327 +2097,309 @@ Boolean ( str ); булево значение
 
 // alert( arr );
 
-// повторю методы подзабыл----------------------------
-
-// splice
-// let arr = [1, 2, 3];
-// arr.splice(1, 1); // удалили 1 элемент, но можно и добавить
-// arr.splice(1, 0, 2);
-// arr.splice(3, 0, 4, 5, 6); // добавили к массиву
-// alert( arr );
-
-// slice - возвращает подмассив не меняя его
-// let arr = [1, 2, 3, 4, 5];
-// alert (arr.slice(0, 3) );
-// alert( arr );
-
-// concat (соединяет массив из аргументов)
-// let arr = [1, 2, 3, 4, 5];
-// alert( arr.concat(6, 7) );
-
-// forEach
-// let arr = [1, 2, 3, 4];
-// arr.forEach( (item, index)  => alert( `${item} ${index}` ) );
-
-// indexOf и includes используют точное сравнение === 
-// let arr = [1, 0, false];
-// alert( arr.indexOf(0) ); //1
-// alert( arr.indexOf(false) ); //2 - потому что нашел именно false а не 0, из-за точного сравнения
-// alert( arr.indexOf(null) ); //-1
-// alert( arr.includes(1) ); //true
-
-// let result = arr.find(function(item, index, array) {
-//     // если true - возвращается текущий элемент и перебор прерывается
-//     // если все итерации оказались ложными, возвращается undefined
-// });
-
-
-// let users = [
-//     {id: 1, name: 'John'},
-//     {id: 2, name: 'Kaster'},
-//     {id: 3, name: 'Juddy'},
-// ]
-
-// let user = users.find ( item => item.id == 1 );
-// alert( `id user = ${user.id}
-// name user = ${user.name}` );
-
-
-// перебор объектов в массиве по ключу и значению
-// let user = users.findIndex( item => item.name == 'Juddy' );
-// alert( user );
-// for( let i = 0; i < users.length; i++) {
-//     for( let key in users[i] ) {
-//         alert( key + users[i][key] )
-//     }
-// }
-
-
-//map
-
-// let arr = [1, 2, 3, 4, 5, 6];
-// let arr2 =[7, 8];
-
-// let result = arr
-// .map(item => item ** 2)
-// .concat(arr2);
-// alert( result );
-
-
-// sort(fn) - сортирует массив на месте!!!
-
-// let arr = [1, 2, 4, 5, 12, 31, 22]
-// arr.sort( (a, b) => a - b );
-// alert( arr );
-
-
-// split - разделяет строку на массив
-
-// let names = 'Вася, Петя, Маша';
-// let arr = names.split(',');
-// alert( arr );
-
-// for (let i = 0; i < arr.length; i++) {
-//     alert(`Сообщение получат ${arr[i]}`);
-// }
-
-// let str = 'Тестирование ПО пустая трата времени';
-// let arr = str.split(' ');
-// console.log( arr );
-
-// join собирает строку в массив обратно
-
-// alert( arr.join(' ') );
-
-// let str = 'Как много людей живёт на планете земля';
-// let arr = (str + ' около 6 миллиардов').split(' ')
-// console.log( arr );
-
-// let strNew = arr.join('-');
-// console.log( strNew );
-
-// reduce
-
-// let str = 'Привет';
-// let arr = str.split('');
-// console.log( arr.reduce( (sum, current) => sum + current) );
-
-// let arrNum = [1, 2, 3, 4, 5, 6, -48];
-// console.log( arrNum.reduce( function (sum, item) {
-//     return sum + item;
-// }));
-
-// alert( Array.isArray([]) ); //true т.к. это массив
-// alert( Array.isArray({}) ); //false т.к. это объект
-
-// let army = {
-//     minAge: 18,
-//     maxAge: 27,
-//     canJoin(user) {
-//         return user.age > this.minAge && user.age < this.maxAge;
-//     }
-// }
-
-// let users = [
-//     {age: 16},
-//     {age: 20},
-//     {age: 23},
-//     {age: 30},
-// ]
-
-// let soldiers = users.filter( army.canJoin, army );
-// console.log( Array.isArray(soldiers) );
-// for( let i = 0; i < soldiers.length; i++) {
-//     console.log( soldiers[i] );
-// }
-
-// filter и map поподробнее изучить!!!
-
-// let peoples = [
-//     {name: 'Igor', age: 22, cash: 1000},
-//     {name: 'Zoy', age: 88, cash: 600},
-//     {name: 'Ignat', age: 44, cash: 330},
-//     {name: 'Liberty',age: 44, cash: 100},
-// ]
-
-// // let pNew = peoples.map(item => item + item.cash );
-// // console.log( pNew );
-// let amount = peoples.reduce( (sum, item) => sum + item.cash, 0);
-// console.log( amount );
-
-// let newPeople = peoples.map(item => {
-//     return {
-//         info: `${item.name} (${item.age})`,
-//         cash: item.cash,
-//     }
-// })
-
-// console.log( newPeople );
-
-// console.log(camelize('back-ground-color') );
-
-// function camelize(str) {
-//     return str
-//     .split('-')
-//     .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
-//     .join('');
-// }
-
-// let arr = [5, 3, 8, 1]
-
-// function filterRange(arr, a, b){
-//     return arr.filter((item) => item >= a && item < b) 
-// };
-
-// let filtered = filterRange(arr, 1, 4);
-// alert( filtered );
-// alert( arr );
-
-// function filterRangeInPlace(arr, a, b) {
-//     for(let i = 0; i < arr.length; i++ ){
-//         let val = arr[i];
-//         if( a <= val && val >= b ) {
-//             arr.splice(i, 1);
-//         }
-//     }
-// }
-
-
-// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
-
-// alert( arr ); // [3, 1]
-
-// arr.sort( (a, b) => b - a );
-// alert( arr );
-
-// let arr = ["HTML", "JavaScript", "CSS"];
-
-// function copySorted(arr) {
-//     return arr.slice().sort();
-// }
-// let sorted = copySorted( arr );
-// alert( sorted );
-// alert( arr );
-
-
-// function Calculator(){
-//     this.calculate = function(str) {
-//         if(str.includes('-')) {
-//             this.arr = str.split(' - ');
-//             return +this.arr[0] - +this.arr[1];
-//         }
-//     }
-// }
-
-
-// let calc = new Calculator;
-// console.log(calc.calculate('40 - 5'));
-
-
-
-
-// let vasya = { name: "Вася", age: 25 };
-// let petya = { name: "Петя", age: 30 };
-// let masha = { name: "Маша", age: 28 };
-
-
-// let users = [vasya, petya, masha];
-// let usersName = users.map(item => item.name);
-
-// console.log(users);
-// console.log(usersName);
-
-// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
-// let petya = { name: "Петя", surname: "Иванов", id: 2 };
-// let masha = { name: "Маша", surname: "Петрова", id: 3 };
-
-// let users = [ vasya, petya, masha ];
-
-// let usersMapped = users.map(item => {
-//     return {
-//         id: item.id,
-//         fullName: `${item.name} ${item.surname}`,
-//     }
-// });
-
-// alert( usersMapped[0].id );
-// alert( usersMapped[0].fullName );
-
-// let vasya = { name: "Вася", age: 25 };
-// let petya = { name: "Петя", age: 30 };
-// let masha = { name: "Маша", age: 28 };
-
-// let arr = [ vasya, petya, masha ];
-
-// function sortByAge(users) {
-//     users.sort((a, b) => a.age - b.age);
-// };
-
-// sortByAge(arr);
-
-// alert(arr[0].name); // Вася
-// alert(arr[1].name); // Маша
-// alert(arr[2].name); // Петя
-
-// let vasya = { name: "Вася", age: 25 };
-// let petya = { name: "Петя", age: 30 };
-// let masha = { name: "Маша", age: 29 };
-
-// let arr = [ vasya, petya, masha ];
-
-// function getAverageAge(users) {
-//     return users.reduce((sum, item) => sum + item.age, 0) / users.length;
-// }
-
-// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
-
-
-
-
-
 // ======================== это разобрать
-function Calculator() {
+// function Calculator() {
 
-    this.methods = {
-      "-": (a, b) => a - b,
-      "+": (a, b) => a + b
-    };
-  
-    this.calculate = function(str) {
-  
-      let split = str.split(' '),
-        a = +split[0],
-        op = split[1],
-        b = +split[2]
-  
-      if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-        return NaN;
-      }
-  
-      return this.methods[op](a, b);
-    }
-  
-    this.addMethod = function(name, func) {
-      this.methods[name] = func;
-    };
-}
+//   this.methods = {
+//     "-": (a, b) => a - b,
+//     "+": (a, b) => a + b
+//   };
 
+//   this.calculate = function(str) {
 
-// function unique(arr) {
-//     let result = [];
+//     let split = str.split(' '),
+//       a = +split[0],
+//       op = split[1],
+//       b = +split[2]
 
-//     for(let str of arr) {
-//         if(!result.includes(str)) {
-//             result.push(str);
-//         }
+//     if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
 //     }
-//     return result;
+
+//     return this.methods[op](a, b);
+//   }
+
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   }
+// };
+
+// +++++++++++++++++++++++++++++++++++
+
+
+//  Генераторы (есть метод next() - вызыва)
+// синтаксис function* для доступа к yield
+// function* strGenerator() {
+//   yield 'H'
+//   yield 'e'
+//   yield 'l'
+//   yield 'l'
+//   yield 'o'
 // }
 
-// let strings = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-O"];
+// const str = strGenerator();
 
-// alert( unique(strings) ); // кришна, харе, :-O
+// console.log( str.next() )
+// console.log( str.next() )
+// console.log( str.next() )
+// console.log( str.next() )
+// console.log( str.next() )
+// console.log( str.next() )
+
+// function* numberGen(n = 10){
+//   for(let i = 0; i < n; i++ ) {
+//     yield i;
+//   }
+// }
+
+// let num = numberGen();
+// console.log( num.next() );
+// console.log( num.next() );
+
+// for( let i of numberGen(7) ){
+//   console.log(i);
+// }
+
+
+// const num = numberGen(7);
+
+// console.log( num.next() );
+
+
+// Генератор без использования функции генератора
+
+// const iterator = {
+//   gen(n = 10) {
+//     let i = 0
+//     return{
+//       next() {
+//         if (i < n) {
+//           return {value: ++i, done: false}
+//         }
+//         return {value: undefined, done: true}
+//       }
+//     }
+//   }
+// }
+
+// let str = [10, 20, 49, 55];
+
+// function* iterator(str) {
+//   for(let name of str) {
+//     yield name;
+//     if(name == 20){
+//       return {value: undefined, done: true}
+//     }
+//   }
+// }
+
+// let iter = iterator(str);
+
+// console.log( iter.next() )
+// console.log( iter.next() )
+// console.log( iter.next() )
+// console.log( iter.next() )
+// console.log( iter.next() )
+// console.log( iter.next() )
+
+
+// let iterator = {
+//   gen(n = 10) {
+//     let i = 0;
+//     return {
+//       next() {
+//         if( i < 3) {
+//           return {value: i++, done: false};
+//         }
+//         return {value: undefined, done: true};
+//       }
+//     }
+//   }
+// }
+
+// let itr = iterator.gen();
+// console.log( itr.next() );
+// console.log( itr.next() );
+// console.log( itr.next() );
+// console.log( itr.next() );
+// console.log( itr.next() );
+// console.log( itr.next() );
+// console.log( itr.next() );
+
+
+// let iterator = {
+//   [Symbol.iterator](n = 10) {
+//     let i = 0;
+//     return {
+//       next() {
+//         if( i < 3) {
+//           return {value: i++, done: false};
+//         }
+//         return {value: undefined, done: true};
+//       }
+//     }
+//   }
+// }
+
+// for( let k of iterator(4) ) {
+//   console.log(k);
+// }
+
+
+// function* iterator(n = 10) {
+//   for( let i =0; i < n; i++){
+//     yield i;
+//   }
+// }
+
+
+// for( let k of iterator(4) ) {
+//   console.log(k);
+// }
 
 
 
-// ==========================
+// =================================
+// Пербираемые объекты (или итерируемые)
+
+// [Symbol.iterator]()
+
+// let range = {
+//     from: 1,
+//     to: 5
+// }
+
+// range[Symbol.iterator] = function() {
+//     return {
+//         current: this.from,
+//         last: this.to,
+//         next() {
+//             if( this.current < this.last ) {
+//                 return {done: false, value: this.current++}
+//             }
+//             return {done: true}
+//         }
+//     }
+// }
+
+// for(let num of range) {
+//     console.log(num)
+// }
+
+
+// let obj = {
+//     start: 2,
+//     end: 18
+// };
+
+// // obj[Symbol.iterator] = function() {
+// //     return {
+// //         current: this.start - 2,
+// //         last: this.end,
+// //         next() {
+// //             if(this.current <= this.last) {
+// //                 return {value: this.current++, done: false}
+// //             }
+// //             return {done: true}
+// //         }
+// //     }
+// // }
+
+// for(let k of obj) {
+//     console.log(k);
+// }
+
+// let range = {
+//     from: 1,
+//     to: 10,
+
+//     [Symbol.iterator]() {
+//         return this;
+//     },
+
+//     next() {
+//         if(this.from < this.to) {
+//             return{value: this.from++, done: false}
+//         }
+//         return{done: true}
+//     }
+// }
+
+// for(let k of range ) {
+//     console.log(k)
+// }
+
+// for(let k of '𝒳😂') {
+//     console.log(k)
+// }
+
+// интересное применение через while
+
+// let str = 'Hello';
+
+// let iterator = str[Symbol.iterator]();
+
+// while (true) {
+//     let result = iterator.next();
+//     if(result.done) break;
+//     console.log(result.value);
+// }
+
+
+
+// метод Array.from принимает итерируемые объекты 
+// и делает из них массив
+
+// let arrayLike = {
+//     1: 'Hello',
+//     2: 'World',
+//     length: 2
+// };
+
+// let arr = Array.from( arrayLike );
+
+// console.log( arr.pop() );
+
+
+// Пример с итерируемым range
+
+// let range = {
+//     from: 1,
+//     to: 10,
+
+//     [Symbol.iterator]() {
+//         return this;
+//     },
+
+//     next() {
+//         if(this.from < this.to) {
+//             return {value: this.from++, done: false}
+//         }
+//         return {done: true}
+//     }
+// }
+
+// // let arr = Array.from(range);
+// // console.log(arr);
+
+// let nArr = Array.from(range, num => num ** 3);
+// console.log(nArr);
+
+
+// разбивка строки на массив ее элементов
+
+// let str = 'Яблоко'; 
+
+// let str = '𝒳😂𩷶'; //с сурогатными парами не работает  split
+
+// let arr = Array.from(str);
+
+// let nArr = str.split(''); //с сурогатными парами не работает  split
+
+// console.log(arr);
+
+// console.log(nArr);
+
+
+
+//  Map и Set
