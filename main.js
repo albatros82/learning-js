@@ -2403,3 +2403,256 @@ Boolean ( str ); булево значение
 
 
 //  Map и Set
+
+// Методы и свойства:
+// new Map() - создает коллекцию
+// map.set(key, value) - записывает по ключу key значение value
+// map.get(key) - возвращает значение по ключу key
+// map.has(key) - возвращает true, если ключ key присутсвует в коллекции иначе false
+// map.delete(key) - удаляет элемент по ключу key
+// map.clear() - очищает коллекцию от всех элементов
+// map.size - возвращает текущее кол-во эл-в
+
+// let map = new Map();
+// map.set( 1, 'str1' );
+// map.set( '1', 'num1' );
+// map.set( true, 'boolean' );
+
+// console.log( map.get(1) );
+// console.log( map.get('1') );
+// console.log( map.get(true) );
+// console.log( map.size );
+// map.clear();
+// console.log( map.size );
+
+
+// объекты в качестве ключей
+
+// let john = {name: 'John'};
+// let visitCountMap = new Map();
+// visitCountMap.set(john, 123);
+// console.log( visitCountMap.get(john) ); //123
+
+// цепочка вызовов map.set()
+
+// map.set(1, 'num1')
+//   .set('1','str1')
+//   .set(true, 'boolean');
+
+// console.log(map.get(1));
+// console.log(map.get('1'));
+
+
+// перебор по коллекции Map 3 метода
+// map.keys() возвращает итерируемый объект по ключам
+// map.values() возвращает итерируемый объект по значениям
+// map.entries() возвращает итерируемый объект по парам вида [ключ, значение] - используется по умолчание в for..of
+
+// let recipeMap = new Map([
+//   ['огурец', 200],
+//   ['помидор', 300],
+//   ['лук', 600],
+// ]);
+
+// // перебор по ключам
+// for( let vegetable of recipeMap.keys() ) {
+//   console.log(vegetable);
+// }
+
+// // перебор по значениям
+// for( let amount of recipeMap.values() ) {
+//   console.log(amount);
+// }
+
+// // перебор по парам [ключ, значение]
+// for( let entries of recipeMap ) {
+//   console.log( entries );
+// }
+// // или через метод entries()
+// for( let entries of recipeMap.entries() ) {
+//   console.log( entries );
+// }
+
+// метод forEach(value, key, map)
+
+// recipeMap.forEach( (value,key) => {
+//   console.log(`${key}: ${value + (value / 100 * 10)}`);
+// });
+
+
+// метод Object.entries(obj) создает Map из объектов
+
+// let obj = {
+//   name: "John",
+//   age: 30
+// };
+
+// let map = new Map(Object.entries(obj));
+
+// for( let entries of map ) {
+//   console.log(entries);
+// }
+
+
+// метод Object.fromEntries(map) создает объект из подходящего Map вида [ключ, значение]
+
+// let prices = Object.fromEntries([
+//   ['banana', 1],
+//   ['orange', 2],
+//   ['apple', 3],
+// ]);
+
+// console.log(prices);
+
+
+// К примеру, у нас данные в Map, но их нужно передать в сторонний код, который ожидает обычный объект.
+// Вот как это сделать:
+
+// let map = new Map();
+// map.set('banana', 1)
+//   .set('orange', 2)
+//   .set('meat', 4);
+
+// // let obj = Object.fromEntries( map.entries() ); 
+// // методом entries() перебираем все ключ-значения но можно и без него!!!
+// let obj = Object.fromEntries( map );
+// console.log( obj );
+// console.log( obj.meat );
+
+
+// Set - это особый виед коллекции множество значений (без ключей), 
+// где каждое значение может появляться только один раз
+
+// Основный методы
+
+// new Set(iterable) - создаёт Set, и если в качестве аргумента был предоставлен итеррируемый объект 
+// (обычно это массив) токопирует его значения в новый Set
+
+// set.add(value) - добавляет значение (если оно уже есть, то ничего не делает), возвращает тотже объект set
+
+// set.delete(value) - удаляет значени, возвращает true если value было в множесте на момент вызова, иначе false
+
+// set.has(value) - возвращает true, если значение присутствует в множестве, иначе false
+
+// set.clear() - удаляет все имеющиеся значения
+
+// set.size - возвращает кол-во эл.-в в множестве
+
+// let set = new Set();
+
+// let john = {name: 'John', age: 22}
+// let pete = {name: 'Pete'}
+// let mary = {name: 'Mary'}
+
+// set.add(john)
+//   .add(mary)
+//   .add(john)
+//   .add(john)
+//   .add(john)
+//   .add(john)
+//   .add(john)
+// console.log(set.size)
+
+// console.log(set)
+
+// for( let user of set ) {
+//   console.log( user.name );
+// }
+
+
+// Перебор объекта Set с помощью for..of и forEach(value, valueAgain, set) // valueAgain иногда может помочь в совместимости set и map
+
+// let set = new Set(['apple', 'orange', 'banana']);
+// for( let value of set ) console.log(value);
+// set.forEach( value => console.log(value) );
+
+// методы Set
+
+// set.keys() - возвращает перебираемый объект для значений
+// set.values() - то же самое что и set.keys() - существует для обратной совместимости с Map
+// set.interies() - возвращает перебираемый объект для пар вида [значение, значение] пресутствует для обратной совместимости с Map
+
+// =====================================================
+// Итог по Map и Set
+
+// Map - коллекция пар ключ-значение
+
+// Методы и свойства:
+// new Map([iterable]) – создаёт коллекцию, можно указать перебираемый объект (обычно массив) из пар [ключ,значение] для инициализации.
+// map.set(key, value) – записывает по ключу key значение value.
+// map.get(key) – возвращает значение по ключу или undefined, если ключ key отсутствует.
+// map.has(key) – возвращает true, если ключ key присутствует в коллекции, иначе false.
+// map.delete(key) – удаляет элемент по ключу key.
+// map.clear() – очищает коллекцию от всех элементов.
+// map.size – возвращает текущее количество элементов.
+
+// Отличия от обычного объекта Object:
+// Что угодно может быть ключом, в том числе и объекты.
+// Есть дополнительные методы, свойство size.
+
+
+// Set – коллекция уникальных значений, так называемое «множество».
+
+// Методы и свойства:
+// new Set([iterable]) – создаёт Set, можно указать перебираемый объект со значениями для инициализации.
+// set.add(value) – добавляет значение (если оно уже есть, то ничего не делает), возвращает тот же объект set.
+// set.delete(value) – удаляет значение, возвращает true если value было в множестве на момент вызова, иначе false.
+// set.has(value) – возвращает true, если значение присутствует в множестве, иначе false.
+// set.clear() – удаляет все имеющиеся значения.
+// set.size – возвращает количество элементов в множестве.
+
+// Перебор Map и Set всегда осуществляется в порядке добавления элементов, 
+// так что нельзя сказать, что это – неупорядоченные коллекции, 
+// но поменять порядок элементов или получить элемент напрямую по его номеру нельзя.
+
+// function unique(arr) {
+//   return Array.from( new Set(arr) );
+// }
+
+// let values = ["Hare", "Krishna", "Hare", "Krishna","Krishna", "Krishna", "Hare", "Hare", ":-O"];
+
+// console.log( unique(values) );
+
+// let map = new Map();
+
+// map.set('name', 'John');
+
+// // let keys = Array.from( map.keys() );
+
+// // keys.push('more');
+
+// // console.log(keys);
+
+// // console.log(map);
+
+// let arr = Array.from(map);
+
+// let nMap = new Map(arr);
+// console.log(nMap);
+
+
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// console.log( aclean(arr) ); // "nap,teachers,ear" or "PAN,cheaters,era"
+
+// function aclean(arr) {
+//   let map = new Map();
+//   for( let word of arr ) {
+//     let sorted = word.toLowerCase().split('').sort().join('');
+//     map.set(sorted, word);
+//   }
+//   return Array.from( map.values() );
+// }
+
+// ============================================
+
+
+// WeakMap ключами должны быть объекты
+
+// методы WakeMap
+
+// weakMap.get(key) // возвращает значение по ключу
+// weakMap.set(key, value)
+// weakMap.delete(key)
+// weakMap.has(key) //возвращает true или false
+
