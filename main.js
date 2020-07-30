@@ -2655,3 +2655,75 @@ Boolean ( str ); булево значение
 // weakMap.set(key, value)
 // weakMap.delete(key)
 // weakMap.has(key) //возвращает true или false
+
+// let john = {name: 'John', age: 22}
+
+// let map = new Map();
+
+// map.set(john, '...');
+
+// john = null;
+
+// // console.log(john)
+
+// for(let key of map.entries()) {console.log(key)} // в памяти еще остался john хотя уже удален!!!
+
+
+
+
+// let weakMap = new WeakMap();
+
+// let obj = {};
+
+// weakMap.set(obj, 'true'); //работает объект в качестве ключа
+
+// weakMap.set('test', 'ok'); // не работает, строка в качестве ключа
+
+
+
+// let john = {name: 'John'};
+
+// let weakMap = new WeakMap();
+
+// weakMap.set(john, '...');
+
+// console.log(weakMap);
+
+// john = null;
+
+// console.log(weakMap); // john уже удалится зависит от движка
+
+// console.log(weakMap.get(john))
+
+
+
+// В WeakMap присутствуют только следующие методы:
+
+// weakMap.get(key)
+// weakMap.set(key, value)
+// weakMap.delete(key)
+// weakMap.has(key)
+
+
+
+// let john = {name: 'John'}
+
+// let visitCountMap = new Map();
+
+// функция подсчета посетителей
+
+// function countMap(user) {
+//   let count = visitCountMap.get(user) || 0;
+//   visitCountMap.set(user, count + 1)
+// }
+
+// сам подсчет, но останется все в памяти если удалить john его значение так и будут занимать область памяти.
+
+// countMap(john);
+// countMap('marry');
+// countMap("john");
+
+// console.log( visitCountMap );
+
+
+let weakMap = new
