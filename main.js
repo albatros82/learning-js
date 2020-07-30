@@ -2655,4 +2655,3 @@ Boolean ( str ); булево значение
 // weakMap.set(key, value)
 // weakMap.delete(key)
 // weakMap.has(key) //возвращает true или false
-
