@@ -1,3 +1,12 @@
+
+// ++++++++++++++++++++++++++++++++
+// метод для Map из объекта
+// Object.entries(obj);
+
+// метод для объекта из Map
+// Object.fromEntries(map);
+
+
 // Шпаргалка по методам массива:
 
 //+++++++ Для добавления/удаления элементов:
@@ -2726,4 +2735,191 @@ Boolean ( str ); булево значение
 // console.log( visitCountMap );
 
 
-let weakMap = new
+// ++++++++++++++++++
+// Object.keys, values, entries
+// Для простых объектов доступны следующие методы:
+
+// Object.keys(obj) – возвращает массив ключей.
+// Object.values(obj) – возвращает массив значений.
+// Object.entries(obj) – возвращает массив пар [ключ, значение].
+// Object.entries с последующим вызовом Object.fromEntries:
+
+// let obj = {name: 'Oj', age: 22, ballance: 2100, sex: 'men'}
+
+// for( let iter of Object.entries(obj) ) {
+//   console.log(iter);
+// }
+
+// let arr = Array.from( Object.entries(obj) );
+
+// console.log( arr );
+
+// let nObj = Object.fromEntries( arr );
+
+// console.log( nObj );
+
+
+// let john = {name: 'John', age: 22}
+
+// let arr = Array.from( Object.entries(john) );
+
+// console.log( arr );
+
+// let setKeyJohn = new Set( Object.keys(john) );
+
+// console.log(setKeyJohn)
+
+
+// function sumSalaries(salaries) {
+//   let sum = 0;
+//   for(let num of Object.values(salaries) ) {
+//     sum += +num;
+//   }
+//   return sum;
+// }
+
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250
+// };
+
+// console.log(sumSalaries(salaries))
+
+
+// function count(obj) {
+//   return Object.keys(obj).length
+// }
+
+// let user = {
+//   name: 'John',
+//   age: 30
+// };
+
+// console.log( count(user) )
+
+
+// Деструктурирующее присваивание+++++++++++++++
+
+// let arr = ['Ilya','Kantor']
+
+// // деструктирующее присваивание
+// // записывает firstName = arr[0], surName = arr[1]
+
+// let [firstName, surName] = arr;
+
+// console.log(firstName);
+// console.log(surName);
+
+
+// // преобразование строку в массив через метод split
+
+// let [firstName, surName] = 'Ilya Kantor'.split(' ');
+
+// console.log(firstName);
+// console.log(surName);
+
+// отбросить элементы можно через запятую
+
+// let arr = ['Julius', 'Santa', 'Bremor', 'of the Romain Republic']
+
+// let [firstName, , , title] = arr;
+
+// let fullName = `${firstName} ${title}`;
+// let arrFullName = fullName.split(' ');
+
+// console.log(firstName);
+// console.log(title);
+// console.log(typeof fullName);
+// console.log(arrFullName);
+
+// let [name, , , , republic] = arrFullName;
+
+// console.log(name + ' ' + republic.toLowerCase() );
+
+
+//++++++++++++ работает с любым перебираемым объектом правой стороны
+
+// let [a, b, c] = 'abc';
+// let [one, two, three] = new Set([1, 2, 3]);
+
+// console.log( a + one );
+
+
+
+//++++++++++++ присваивает чему угодно с левой стороны
+
+// let user = {};
+
+// [user.name, user.surname] = 'Ilya Maslov'.split(' ');
+
+// console.log(user.name);
+
+// console.log(user);
+
+
+
+// ++++++++++ Цикл с entries()
+
+
+// let user = {
+//   name: 'John',
+//   age: 30
+// };
+
+// // цикл по ключам и значениям
+// for( let[key, value] of Object.entries(user) ) {
+//   console.log(`${key}: ${value}`);
+// }
+
+
+// то же самое для Map
+
+// let map = new Map();
+
+// map.set('name', 'John');
+// map.set('age',22);
+
+// for(let [key, value] of map) {
+//   console.log(`${key}: ${value}`);
+// }
+
+
+// остаточные параметры ...
+
+// let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+// console.log(name1);
+// console.log(name2);
+
+// // оператор (...) - должен стоять последним, - получили остаточный массив rest ["Consul", "of the Roman Republic"] 
+
+// console.log(rest[0]) // обратимся к массиву = Consul
+
+
+// значение по умолчанию 
+
+// let [name = 'Guest', surName = 'Bin'] = ['Anonimus'];
+
+// console.log(name); // Anonimus - взято из массива
+// console.log(surName); // Bin - взято по умолчанию, т.к. нечего брать из массива
+
+
+// let [name = prompt('Name',''), surName = prompt('Surname','')] = ['Julius'];// prompt запустится только для surName т.к. name будет взят по умолчанию.
+
+// console.log( surName[0].toLowerCase() + surName.slice(1).toUpperCase() );
+
+
+
+// let option = {title: 'menu', trigger: 10};
+
+// let {width: w = 100, title, height: h = 40, trigger} = option;
+
+// console.log( w );
+// console.log( title );
+// console.log( h );
+// console.log( trigger );
+
+
+// +++++ Вызова только title
+let 
