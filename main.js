@@ -2921,5 +2921,161 @@ Boolean ( str ); булево значение
 // console.log( trigger );
 
 
-// +++++ Вызова только title
-let 
+
+
+// ++++++++++ деструктуризация с объектами
+
+// let user = {};
+
+// [user.name, user.age] = ['John', 22]; // присваивает значение объекту
+
+// console.log(user.name);
+
+
+// let {name = 'John', age = 22} = {}; // присваивает значение только переменной
+
+// console.log(name);
+
+// console.log(user);
+
+
+
+// +++++ Вызов только title
+
+// let option = {
+//     title: 'Menu',
+//     width: 120,
+//     heigh: 200,
+// }
+
+// let {title} = option;
+
+// console.log(title);
+// +++++++++++++++++++++++++
+
+// let {height: h = 100, width, title} = {title: 'Menu', width: 33}
+
+// console.log( title );
+// console.log( h );
+
+
+
+// +++++++++++++++Вложенная деструктуризация
+
+// let options = {
+//     size: {
+//         width: 100,
+//         height: 200,
+//     },
+
+//     items: ['Cake', 'Donut'],
+
+//     extra: true,
+// };
+
+// let {
+//     size: {
+//         width: w,
+//         height: h,
+//         radius: r = 50
+//     },
+
+//     items: [items1, items2],
+
+//     title = 'Menu'
+// } = options;
+
+// console.log( w );
+// +++++++++++++++++++
+
+
+
+// Умные параметры функций  - Мы можем передать параметры как объект, и функция немедленно деструктурирует его в переменные:
+
+
+// let options = {
+//     title: 'My menu',
+//     items: ['Item1', 'Item2'],
+// }
+
+// function showMenu( {title = 'Untitled', width = 200, height = 100, items = []} ) {
+//     // title, items - взято из options
+//     // width, height - используют значения по умолчанию
+//     // console.log( `${title} ${width} ${items}`)
+//     console.log( `${title} ${width} ${items}`);
+// };
+
+// showMenu( options );
+
+
+// let options = {
+//     title: 'My menu',
+//     items: [500, 300],
+// };
+
+// function showMenu( {
+//     title = 'Untitled',
+//     width: w = 100,
+//     height: h = 50,
+//     items: [item1, item2],
+// }) {
+//     console.log(`${title} ${w} ${h} ${item1 - item2}`)
+// };
+
+// showMenu(options);
+
+
+// +++++++++++++++++++++++++++++++++++++
+
+// let user = {
+//     name: "John",
+//     years: 30,
+// };
+
+// let {name, years: age, isAdmin = false} = user;
+
+// console.log(name + ' '+ age + ' ' + isAdmin);
+
+// let salaries = {
+//     // 'John': 100,
+//     // 'Pete': 300,
+//     // 'Mary': 250,
+// }
+
+// function topSalary( salaries ) {
+//     let maxMoney = 0;
+//     let name = null;
+
+//     for( let [key, value] of Object.entries(salaries) ){
+//         if(value > maxMoney) {
+//             maxMoney = value;
+//             name = key;
+//         }
+//     }
+//     return name;
+// }
+
+// console.log( topSalary( salaries ) );
+
+
+
+// +++++++++++++++ Дата и время!!
+
+
+
+function myFib(num) {
+    let arr = [ 1, 1];
+    while( num > ( arr[arr.length - 2] + arr[arr.length - 1] ) ) {
+        arr.push( arr[arr.length - 2] + arr[arr.length - 1] )
+    };
+    if( typeof num == 'string' || isNaN(num)) {
+        return NaN
+    } else if (num == 0) {
+        return 0;
+    } else if (num == 1) {
+        return arr[1]
+    }
+    return arr;
+}
+
+console.log( fib(445) );
