@@ -3059,23 +3059,54 @@ Boolean ( str ); булево значение
 
 
 
+
+
+
+
+// function myFib(num) {
+//     let arr = [ 1, 1];
+//     while( num > ( arr[arr.length - 2] + arr[arr.length - 1] ) ) {
+//         arr.push( arr[arr.length - 2] + arr[arr.length - 1] )
+//     };
+//     if( typeof num == 'string' || isNaN(num)) {
+//         return NaN
+//     } else if (num == 0) {
+//         return 0;
+//     } else if (num == 1) {
+//         return arr[1]
+//     }
+//     return arr;
+// }
+
+// console.log( fib(445) );
+
+// let users = {};
+
+// [users.john, users.nickole, users.abram] = [{
+//     name: 'John', 
+//     age: 22,
+//     ballance: 30,
+// },
+// {
+//     name: 'Nickole',
+//     age: 44,
+//     ballance: 50,
+// },
+// {
+//     name: 'Abram',
+//     age: 88,
+//     ballance: 8000,
+// } ];
+
+
+// let john = users.john;
+
+// [john.sex, john.fobia] = ['men', 'spider']; 
+
+// let {sex: s, fobia: f} = john;
+
+// console.log( s );
+
+
+
 // +++++++++++++++ Дата и время!!
-
-
-
-function myFib(num) {
-    let arr = [ 1, 1];
-    while( num > ( arr[arr.length - 2] + arr[arr.length - 1] ) ) {
-        arr.push( arr[arr.length - 2] + arr[arr.length - 1] )
-    };
-    if( typeof num == 'string' || isNaN(num)) {
-        return NaN
-    } else if (num == 0) {
-        return 0;
-    } else if (num == 1) {
-        return arr[1]
-    }
-    return arr;
-}
-
-console.log( fib(445) );
