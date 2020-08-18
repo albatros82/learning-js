@@ -3110,3 +3110,202 @@ Boolean ( str ); булево значение
 
 
 // +++++++++++++++ Дата и время!!
+
+// синтаксис let date = new Date();
+// new Date(year, month, date, hours, minutes, seconds, ms) - Создать объект Date с заданными компонентами в местном часовом поясе. Обязательны только первые два аргумента.
+// year должен состоять из четырёх цифр: значение 2013 корректно, 98 – нет.
+// month начинается с 0 (январь) по 11 (декабрь).
+// Параметр date здесь представляет собой день месяца. Если параметр не задан, то принимается значение 1.
+// Если параметры hours/minutes/seconds/ms отсутствуют, их значением становится 0.
+
+
+// let date = new Date();
+// console.log( date );
+
+// let Jan01_1970 = new Date(0);
+// console.log( Jan01_1970 );
+
+// let Jan02_1970 = new Date( 24 * 3600 *1000); // прибавили 24ч в милиссекундах к началу отсчета (таймстампа)
+// console.log( Jan02_1970 );
+
+// let date = new Date( '2017-10-26' ); // строку также воспримет
+// console.log( date );
+
+// let date = new Date( 2010, 4, 25, 12, 30);
+// console.log( date );
+
+
+// +++++методы получения даты
+
+// getFullYear() - получить год (4 цифры)
+
+// getMonth() - получить месяц (от 0 до 11)
+
+// getDate() - получить день месяца (от 1 до 31)
+
+// getHours(), getMinutes(), getSeconds(), getMilliSeconds()
+
+// getDay() - получить день недели( от 0 до 6 )!
+
+// getTime() - возвращает кол-во миллисекунд с тайм стампа
+
+// getTimezoneOffset() - возвращает разницу в минутах между местным и часовым поясом UTC
+
+// ++++++++++ UTC
+
+// let date = new Date();
+// console.log( date.getHours() );
+// console.log( date.getUTCHours() ); // c UTC = 0; ++++++++
+
+// console.log( date.getTime() );
+
+// getTimezoneOffset() - возвращает разницу в минутах между местным и часовым поясом UTC
+
+// console.log( new Date().getTimezoneOffset() );
+// если вы в часовом поясе UTC-1, то выводится 60
+// если вы в часовом поясе UTC+3, выводится -180
+
+
+// Методы установки компонентов даты и времени:
+
+// setFullYears( year, [month], [date] );
+// setMonth( month, [date] );
+// setDate( date );
+// setHours( hour, [min], [sec], [ms]);
+// setMinutes(min, [sec], [ms])
+// setSeconds(sec, [ms])
+// setMilliSeconds(ms);
+// setTime(milliseconds) устанавливает дату в виде целого количества миллисекунд, прошедших с 01.01.1970 UTC)
+
+
+// у всех этих мотодов кроме setTime() есть UTC - вариант, например setUTCHours()
+
+// let today = new Date();
+// // today.setHours(0); // установили текущую дату с часом = 0;
+// // today.setHours(0, 0, 0) // установили текущую дату с часом сек и миллисек = 0 
+// today.setHours(0, 0) //Если какая-то компонента не указана, она не меняется.
+
+// console.log(today);
+
+
+
+// ++++++++++++ Автоисправление даты
+// если поставить дату вне диапозона она автоматически исправится
+
+// let date = new Date(2013, 1, 32);
+// console.log(date);
+
+
+// чтобы увеличить дату на 2 или сколько угодно дней нужно просто прибавить увеличим дату на 2 дня
+// let date = new Date(2010, 3, 22); 
+// date.setDate( date.getDate() + 2 );
+// console.log( date );
+
+// увелим дату спустя 70 секунд с текущего момента
+// let date = new Date();
+// date.setSeconds( date.getSeconds() + 70 );
+// console.log( date );
+
+// отрицательные значения
+// let date = new Date();
+// date.setDate(1); // задать первое число месяца
+// console.log(date);
+
+// date.setDate(0); // число мес. начинается с 1, 0 это последнее число предыдущего
+// console.log( date );
+
+
+
+// +++++++++++ Date.now()
+
+// let start = Date.now();// этот способ работает быстрее и не нагружает сборщик мусора
+
+// // что то делаем
+// for( let i = 0; i < 100000; i++) {
+//     let doSomething = i * i * i;
+// }
+
+// let end = Date.now();
+// console.log(`цикл проработал ${end - start} миллисекунд`); // вычесляются числа, а не даты!!!
+
+
+
+// Бенчмаркинг +++++++++++
+
+// измерение через функцию
+
+// function diffSubtract(date1, date2) {
+//     return date2 - date1;
+// }
+
+// function diffGetTime(date1, date2) {
+//     return date2.getTime() - date1.getTime();
+// }
+
+// function bench(f) {
+//     let date1 = new Date(0);
+//     let date2 = new Date();
+    
+//     let start = Date.now();
+//     for(let i = 0; i < 100000; i++) f(date1, date2);
+//     return Date.now() - start;
+
+// }
+
+// console.log( 'Время diffSubtract: ' + bench(diffSubtract) + 'мс' );
+// console.log( 'Время diffGetTime: ' + bench(diffGetTime) + 'мс' );
+
+
+// ++++++ Метод Date.parse(str) считывает дату из строки
+
+// формат строки должен быть YYYY-MM-DDTHH:mm:ss.sssZ, где:
+// YYYY-MM-DD - это дата год, месяц, день
+// символ T используестя в качестве разделителя
+// HH:mm:ss.sss - время, часы, минуты, секунды и миллисекунды
+// Необязательная часть 'Z' обозначает частовой пояс в формате +- hh:mm Если указать просто букву Z, то получим UTC+0;
+
+// Вызов Date.parse(str) обрабатывает строку в заданном формате и возвращает таймстамп (количество миллисекунд с 1 января 1970 года UTC+0). Если формат неправильный, возвращается NaN.
+
+// let date = new Date( Date.parse('2012-01-26T13:51:50.417-07:00') );
+// console.log( date );
+
+
+// +++++++++++++++++++++++++
+
+// let date = new Date ( 2012, 1, 20, 3, 12);
+// alert ( date );
+
+
+console.log( date.getDate() );
+
+function getWeekDay(date) {
+    let date = new Date( 2012, 0, 3 );
+    let day = date.getData();
+    switch ( true ) {
+        case (day === '0'):
+            return 'ПН';
+            break;
+        case (day === '1'):
+            return 'ВТ';
+            break;
+        case (day === '2'):
+            return 'СР';
+            break;
+    }
+}
+
+alert( getWeekDay(date) ); 
+
+
+// let year = null;
+// // switch (true) {
+// //     case (age == '1'):
+// //         year = 'год';
+// //         break;
+// //     case (age > '1' && age < '5'):
+// //         year = 'года';
+// //         break;
+// //     case (age == '0' || age <= '100'):
+// //         year = 'лет';
+// //         break;
+// // }
