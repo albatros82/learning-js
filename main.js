@@ -3276,36 +3276,59 @@ Boolean ( str ); булево значение
 // alert ( date );
 
 
-console.log( date.getDate() );
+// let date = new Date( 2012, 0, 3 );
 
-function getWeekDay(date) {
-    let date = new Date( 2012, 0, 3 );
-    let day = date.getData();
-    switch ( true ) {
-        case (day === '0'):
-            return 'ПН';
-            break;
-        case (day === '1'):
-            return 'ВТ';
-            break;
-        case (day === '2'):
-            return 'СР';
-            break;
-    }
+// function getWeekDay(date) {
+//     let dayWeek = date.getDay();
+
+//     switch(true) {
+//         case (dayWeek === 1):
+//         return 'ПН';
+//         break;
+
+//         case (dayWeek === 2):
+//         return 'ВТ';
+//         break;
+
+//         case (dayWeek === 3):
+//         return 'СР';
+//         break;
+
+//         case (dayWeek === 4):
+//         return 'ЧТ';
+//         break;
+
+//         case (dayWeek === 5):
+//         return 'ПТ';
+//         break;
+
+//         case (dayWeek === 6):
+//         return 'СБ';
+//         break;
+
+//         case (dayWeek === 7):
+//         return 'ВС';
+//         break;
+//     }
+// }
+
+// alert( getWeekDay(date) );
+
+// ++++++++++++++++
+// function getWeekDay(date) {
+//     let days = ['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС'];
+//     return days[date.getDay() -1];
+// }
+// alert( getWeekDay(date) );
+
+
+let date = new Date(2015, 0, 2);
+
+function getDateAgo(date, days){
+    return date.setDate(date.getDate() - days);
 }
 
-alert( getWeekDay(date) ); 
+alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
 
 
-// let year = null;
-// // switch (true) {
-// //     case (age == '1'):
-// //         year = 'год';
-// //         break;
-// //     case (age > '1' && age < '5'):
-// //         year = 'года';
-// //         break;
-// //     case (age == '0' || age <= '100'):
-// //         year = 'лет';
-// //         break;
-// // }
+
