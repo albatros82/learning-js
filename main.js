@@ -1142,13 +1142,13 @@ Boolean ( str ); булево значение
 //     money: 0,
 //     happy: 'very',
 
-//     // valueOf() {
-//     //     return this.money;
-//     // },
+//     valueOf() {
+//         return this.money;
+//     },
 
-//     // toString() {
-//     //     return this.name;
-//     // },
+//     toString() {
+//         return this.name;
+//     },
     
 
 //     // [Symbol.toPrimitive](hint) {
@@ -3320,15 +3320,214 @@ Boolean ( str ); булево значение
 //     return days[date.getDay() -1];
 // }
 // alert( getWeekDay(date) );
+//+++++++++++++++++ 
+
+// ++++++++++++++++
+// let date = new Date(2015, 0, 2);
+
+// // function getDateAgo(date, days) {
+// //     return new Date( date - days * (1000 * 3600 * 24) ).getDate();
+// // }
+
+// function getDateAgo(date, days ) {
+//     let dateCopy = new Date(date);
+//     dateCopy.setDate(date.getDate() - days);
+//     return dateCopy.getDate();
+// }
+
+// console.log( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+// console.log( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+// console.log( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+// +++++++++++++++++++
 
 
-let date = new Date(2015, 0, 2);
+// function getLastDayOfMonth(year, month) {
+//     // let date = new Date(year, month);
+//     // date.setMonth(date.getMonth() + 1 );
+//     // date.setDate(date.getDate() - 1 );
+//     // return date.getDate();
+    
+//     let date = new Date(year, month + 1, 0);
+//     return date.getDate();
+// }
 
-function getDateAgo(date, days){
-    return date.setDate(date.getDate() - days);
+// console.log( getLastDayOfMonth(2012, 1) );
+
+// ++++++++++++++++++++++++++++++++++++++++
+// function getSecondToday() {
+//     let date = new Date();
+//     date.setHours(9, 0, 0, 0);
+//     date = Math.floor((Date.now() - date) / 1000);
+//     console.log( date ); 
+// }
+
+// getSecondToday();
+// +++++++++++++++++++++++++++++++++++++++++
+
+// function getSecondsToTommorow() {
+//     let date = new Date();
+//     date.setDate( date.getDate() + 1 );
+//     date.setHours(0, 0, 0, 0);
+//     let secondToTommorow = Math.floor((date - Date.now())/1000);
+//     return secondToTommorow;
+// }
+
+// console.log( getSecondsToTommorow() );
+
+// ++++++++++++++++++++++++++++++++++++++++++
+
+
+
+// Формат JSON, метод toJSON +++++++++++++++
+
+// let user = {
+//     name: 'John',
+//     age: 22,
+//     money: 2555,
+//     toString() {
+//         return `{name: ${this.name}, age: ${this.age}}`
+//     },
+//     valueOf() {
+//         return this.money;
+//     }
+// }
+
+// console.log(user);
+// alert(user);
+// alert(+user);
+
+// JSON.stringify - для преобразования объектов в JSON
+// JSON.parse - для преобразования JSON обратно в объект
+
+// let student = {
+//     name: 'John',
+//     age: 30,
+//     isAdmin: false,
+//     courses: ['html', 'css', 'js'],
+//     wife: null,
+// }
+
+// let json = JSON.stringify(student);
+
+// // console.log( typeof json ); // получим строку
+
+// alert( json ); // Полученная строка json называется JSON-форматированным или сериализованным объектом.
+
+
+// JSON пропускает специфические свойства объектов
+// - свойства функции (методы)
+// - символьные свойства
+// - свойства содержащие undefined
+
+// let user = {
+//     sayHi() {
+//         alert('Привет');
+//     }, // будет пропущено
+
+//     [Symbol('id')]: 123, // будет пропущено
+
+//     something: undefined, // также будет пропущено
+
+//     isAdmin: false // это будет
+// }
+
+// alert( JSON.stringify(user) );
+
+// let meetup = {
+//     title: "Conference",
+//     room: {
+//         number: 23,
+//         participants: ["John", "Ann"]
+//     }
+// };
+
+// console.log( JSON.stringify(meetup) );
+
+
+
+// ++++++++++ replacer
+
+// Полный синтаксис JSON.stringify
+// let json = JSON.stringify(value[, replacer, space]);
+
+// value - значение для кодирования
+
+// replacer - массив свойств для кодирования или функция соответсвия function(key, value);
+
+// space - дополнительное пространство (отступы), используемое для форматирования.
+
+// let room = {
+//     number: 23,
+// }
+
+// let meetup = {
+//     title: "Conference",
+//     participants: [{name: "John"},{name: "Alice"}],
+//     place: room, //meetup ссылается на room
+// };
+
+// room.occupiedBy = meetup; // room ссылается на meetup
+
+// alert( JSON.stringify(meetup,['title', 'participants']) );
+
+// let room = {
+//     number: 23,
+// };
+
+// let meetup = {
+//     title: "Conference",
+//     participants: [{name: "John"}, {name: "Alice"}],
+//     place: room, // meetup ссылается на rooom
+// };
+
+// room.occupiedBy = meetup; // room ссылается на meetup
+
+// console.log( JSON.stringify( meetup, ['title', 'participants', 'place', 'name', 'number'] ));
+
+
+// +++++ replacer
+
+// let room = {
+//     number: 23,
+// };
+
+// let meetup = {
+//     title: "Conference",
+//     participants: [{name: "John"}, {name: "Alice"}],
+//     place: room, // meetup ссылается на rooom
+// };
+
+// room.occupiedBy = meetup; // room ссылается на meetup
+
+// console.log( JSON.stringify( meetup, function replacer( key, value) {
+//     // console.log(`${key}: ${value}`);
+//     return (key == 'occupiedBy') ? undefined : value;
+// } ));
+
+
+// ++++ форматирование space применяется для логирования и красивого вывода
+
+// let user = {
+//     name: "John",
+//     age: 25,
+//     roles: {
+//         isAdmin: false,
+//         isEditor: true,
+//     }
+// };
+
+// alert( JSON.stringify(user, null, 2) );
+
+// ++++++ пользовательский toJSON
+
+let room = {
+    number: 23,
 }
 
-alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+let meetup = {
+    title: 'Conference',
+    date: new Date(Date.UTC(2017,0,1)),
+    room,
+};
 
-
-
+alert( JSON.stringify(meetup) );
