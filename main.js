@@ -3520,14 +3520,263 @@ Boolean ( str ); булево значение
 
 // ++++++ пользовательский toJSON
 
-let room = {
-    number: 23,
-}
+// let room = {
+//     number: 23,
+// }
 
-let meetup = {
-    title: 'Conference',
-    date: new Date(Date.UTC(2017,0,1)),
-    room,
-};
+// let meetup = {
+//     title: 'Conference',
+//     date: new Date(Date.UTC(2017,0,1)),
+//     room,
+// };
 
-alert( JSON.stringify(meetup) );
+// alert( JSON.stringify(meetup) );
+
+
+
+
+// +++++ встроенный метод toJSON()
+
+// let room = {
+//     number: 23,
+//     toJSON() {
+//         return this.number;
+//     },
+// };
+
+// let meetup = {
+//     title: "Conference",
+//     room,
+// };
+
+// alert( JSON.stringify(room) );
+// alert( JSON.stringify(meetup) );
+
+
+
+// ++++++++++ JSON.parse - декодировать строку в объект
+
+// let value = JSON.parse(str, [reviver]);
+
+// str - JSON преобразует в объект
+// reviver - необязательная функция которая будет вызываться для каждой пары (ключ, значение) и может преобразовывать значение.
+
+
+// Пример.
+
+// let numbers = "[0, 1, 2, 3, 4, 5]"; // Это мы получим с JSON.stringigy();
+
+// numbers = JSON.parse(numbers);
+
+// console.log( numbers[1] ); //1
+
+
+// Для вложенных объектов
+
+// let user = '{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+
+// user = JSON.parse(user);
+// console.log( user.friends[1] ); //1
+// console.log( user.name );
+// console.log( user.age );
+
+
+// Особенность с Date и пр. объектами
+
+// let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+// let meetup = JSON.parse(str, function(key, value) {
+//   if (key == 'date') return new Date(value);
+//   return value;
+// });
+
+// console.log ( meetup.date.getDate() ); //30
+
+
+// еще пример с Date
+
+// let schedule = `{
+//     "meetups": [
+//       {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+//       {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+//     ]
+// }`;
+  
+// schedule = JSON.parse(schedule, function(key, value) {
+//     if (key == 'date') return new Date(value);
+//     return value;
+// });
+  
+// console.log( schedule.meetups[1].date.getDate() );
+
+
+// let user = {
+//     name: 'John',
+//     toJSON() {
+//         return 'Go to Fuck';
+//     },
+//     toString() {
+//         return this.toJSON();
+//     }
+// }
+// alert (user);
+// user = JSON.stringify(user);
+// console.log(user);
+
+
+
+// ++++++++++++++++++++ задачки
+
+
+// let user = {
+//     name: "Василий Иванович",
+// }
+
+// user = JSON.stringify(user);
+
+// console.log(user);
+
+// user = JSON.parse(user);
+
+// console.log(user);
+
+// ++++++++++++++++++++++++
+
+
+// let room = {
+//     number: 23
+// };
+
+// let meetup = {
+//     title: "Совещание",
+//     occupiedBy: [{name: "Иванов"}, {name: "Петров"}],
+//     place: room,
+// };
+
+// room.occupiedBy = meetup;
+// meetup.self = meetup;
+
+
+// alert( JSON.stringify(meetup, function replacer(key, value){
+//     return (key != "" && value == meetup) ? undefined : value;
+// }));
+// ++++++++++++++++++++++++++++++++++++++++
+
+
+// ПРОДВИНУТАЯ РАБОТА С ФУНКЦИЯМИ
+// ++++++++++++++++++++++++++++++
+
+
+
+// Рекурсия и стек
+
+// 2 мышления (рекурсивное и итеративное (через цикл))
+
+// console.log( pow(2,2) );
+// console.log( pow(4,2) );
+
+// через цикл
+
+// function pow(a, b) {
+//     let result = 1;
+//     for(let i = 0; i < b; i++) {
+//         result *= a;
+//     }
+//     return result;
+// }
+
+// через рекурсию
+
+// function pow(x, n){
+//     if( n == 1) {
+//         return n;
+//     }else{
+//         return x * pow(x , n - 1);
+//     }
+// }
+
+// console.log( pow(3, 4) );
+
+// let company = { // тот же самый объект, сжатый для краткости
+//     sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600 }],
+//     development: {
+//       sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800 }],
+//       internals: [{name: 'Jack', salary: 1300}]
+//     }
+// };
+
+// function sumSalaries(department) {
+//     if( Array.isArray(department) ) {
+//         return department.reduce((prev, current) => prev + current.salary, 0);
+//     } else {
+//         let sum = 0;
+//         for( let subdep of Object.values(department) ) {
+//             sum += sumSalaries(subdep);
+//         }
+//         return sum;
+//     }
+// }
+
+// console.log( sumSalaries(company) );
+
+
+// Связанный список
+
+
+
+
+// Рекурсия - это термин в программировании, означающий вызов функцией самой себя. Рекурсивные функции могут быть использованы для элегантного решения определенных задач.
+
+// Когда функция вызывает саму себя, это называется шагом рекурсии. База рекурсии - это такие аргументы функции, которые делают задачу настолько простой, что решение не требует дальнейших вложенныъ вызовов.
+
+
+// ++++++++++++++++++++ задачи
+
+// с использованием цикла
+
+// function sumTo(num) {
+//     let sum = 0;
+//     for( let i = 0; i <= num; i++) {
+//         sum = sum + i;
+//     }
+//     return sum;
+// }
+
+// console.log( sumTo(1) );
+
+
+// с использованием рекурсии
+
+// function sumTo(num) {
+//     if(num == 1) {
+//         return num;
+//     }else{
+//         return num + sumTo(num - 1);
+//     }
+// }
+
+// console.log( sumTo(5) );
+
+
+// факториал
+
+// function factorial(n) {
+//     return (n == 1) ? 1 : n * factorial(n - 1);
+// };
+
+// console.log( factorial(5) );
+
+
+// число фибоначи через рекурсию
+
+// function fib(n) {
+//     if( n == 1 || n == 2) {
+//         return 1;
+//     } else {
+//         return fib(n - 1) + fib(n - 2);
+//     }
+// }
+
+// console.log( fib(13) );
+
+// число фибоначи через перебор (итерации цикла)
