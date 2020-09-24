@@ -3777,6 +3777,17 @@ Boolean ( str ); булево значение
 //     }
 // }
 
-// console.log( fib(13) );
+// console.log( fib(3) );
 
 // число фибоначи через перебор (итерации цикла)
+
+function fib(n) {
+    let arr = [1, 1];
+    while( arr.length < n ) {
+        arr.push( arr[arr.length - 1] + arr[arr.length - 2] );
+    }
+    // return arr[arr.length - 1];
+    return arr;
+}
+
+console.log( fib(7) );
