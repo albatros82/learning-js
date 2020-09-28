@@ -3791,3 +3791,37 @@ Boolean ( str ); булево значение
 // }
 
 // console.log( fib(7) );
+
+// function rec(n) {
+//     n = n + 2;
+//     console.log(n);
+//     if(n == 10 || n > 10) {
+//         return n;
+//     }else{
+//         return rec(n);
+//     }
+// };
+
+// rec(0);
+
+// let fac = (n) => {
+//     if(n == 1) {
+//         return n;
+//     }else{
+//         return n * fac(n -1);
+//     }
+// }
+
+// console.log( fac(5) );
+
+function getSum(arr, sum) {
+    sum += arr.shift();
+
+    if(arr.length != 0) {
+        sum = getSum(arr, sum);
+    }
+
+    return sum;
+}
+
+console.log( getSum([1, 2, 3], 0));
