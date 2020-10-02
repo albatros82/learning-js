@@ -3814,14 +3814,69 @@ Boolean ( str ); булево значение
 
 // console.log( fac(5) );
 
-function getSum(arr, sum) {
-    sum += arr.shift();
+// рекурсия суммы чесел
 
-    if(arr.length != 0) {
-        sum = getSum(arr, sum);
+// function getSum(arr, sum) {
+//     sum += arr.shift();
+
+//     if(arr.length != 0) {
+//         sum = getSum(arr, sum);
+//     }
+
+//     return sum;
+// }
+
+// console.log( getSum([1, 2, 3], 0));
+
+
+// Односвязный список JS
+
+
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null,
+            }
+        }
+    }
+};
+
+function printListReverse(list) {
+    let arr = [];
+
+    while(list) {
+        arr.push(list.value);
+        list = list.next;
     }
 
-    return sum;
+    for(let num of arr.reverse()) {
+        console.log(num);
+    }
+
 }
 
-console.log( getSum([1, 2, 3], 0));
+printListReverse(list);
+
+// function printList(list) {
+
+//     while(list) {
+//         console.log(list.value);
+//         list = list.next;
+//     }
+
+// }
+
+// function printList(list) {
+//     console.log(list.value);
+
+//     if(list.next) {
+//         console.log( printList(list.next) );
+//     }
+// }
+
+// printList(list);
