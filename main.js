@@ -3832,35 +3832,35 @@ Boolean ( str ); булево значение
 // Односвязный список JS
 
 
-let list = {
-    value: 1,
-    next: {
-        value: 2,
-        next: {
-            value: 3,
-            next: {
-                value: 4,
-                next: null,
-            }
-        }
-    }
-};
+// let list = {
+//     value: 1,
+//     next: {
+//         value: 2,
+//         next: {
+//             value: 3,
+//             next: {
+//                 value: 4,
+//                 next: null,
+//             }
+//         }
+//     }
+// };
 
-function printListReverse(list) {
-    let arr = [];
+// function printListReverse(list) {
+//     let arr = [];
 
-    while(list) {
-        arr.push(list.value);
-        list = list.next;
-    }
+//     while(list) {
+//         arr.push(list.value);
+//         list = list.next;
+//     }
 
-    for(let num of arr.reverse()) {
-        console.log(num);
-    }
+//     for(let num of arr.reverse()) {
+//         console.log(num);
+//     }
 
-}
+// }
 
-printListReverse(list);
+// printListReverse(list);
 
 // function printList(list) {
 
@@ -3880,3 +3880,38 @@ printListReverse(list);
 // }
 
 // printList(list);
+
+// function pow(x, n) {
+//     let result = 1;
+
+//     for(let i = 0; i < n; i++) {
+//         result = result * x; 
+//     }
+
+//     return result;
+// }
+
+// console.log( pow(2, 3) );
+
+
+// let company = {
+//     sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+//     development: {
+//         sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+//         internals: [{name: 'Jack', salary: 1300}],
+//     }
+// };
+
+// function sumSalary(departament) {
+//     if(Array.isArray(departament)) {
+//         departament.reduce((sum, item) => sum + item.salary, 0);
+//     } else {
+//         let sum = 0;
+//         for(let subdep of Object.values(departament)) {
+//             sum = sum + sumSalary(subdep);
+//         }
+//         return sum;
+//     }
+// };
+
+// console.log(sumSalary(company));
