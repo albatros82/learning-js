@@ -3915,3 +3915,199 @@ Boolean ( str ); булево значение
 // };
 
 // console.log(sumSalary(company));
+
+
+// function sumTo(n) {
+//     let sum = 0;
+
+//     for(let i = 1; i <= n; i++){
+//         sum = sum + i;
+//     }
+//     return sum;
+// };
+
+// console.log(sumTo(4));
+
+// function sumTo(n) {
+//     return (n == 1) ? 1 : n + sumTo(n - 1);
+// }
+// console.log(sumTo(4));
+
+// function factorial(n) {
+//     return (n == 1) ? 1 : n * factorial(n - 1);
+// }
+// console.log(factorial(5));
+
+// function fib(n) {
+//     let arr = [1, 1];
+//     if(n == 1 || n == 2) return 1;
+//     for( let i = 2; i < n; i++) {
+//         arr.push(arr[arr.length - 2] + arr[arr.length - 1])
+//     }
+//     return arr[n - 1];
+// };
+
+// console.log(fib(7));
+
+// let list = {
+//     value: 1,
+//     next: {
+//         value: 2,
+//         next: {
+//             value: 3,
+//             next: null,
+//         }
+//     }
+// };
+
+// function printList(list) {
+
+//     console.log(list.value)
+
+//     while(list.next) {
+//         console.log(list.next.value);
+//         list = list.next;
+//     }
+// };
+
+// printList(list);
+
+// function printList(list) {
+//     console.log(list.value);
+
+//     if(list.next) {
+//         printList(list.next);
+//     }
+// }
+
+// printList(list);
+
+// function listReverse(list) {
+//     let arr = [];
+//     while(list) {
+//         arr.push(list.value);
+//         list = list.next;
+//     }
+
+//     for( let num of arr.reverse() ) {
+//         console.log( num );
+//     }
+// }
+
+// listReverse(list);
+
+
+// function listReverse(list) {
+//     console.log(list.value);
+
+//     if(list.next) {
+//         list = list.next;
+//         listReverse(list);
+//     }
+// };
+
+// listReverse(list);
+
+// +++++++++++++++++++++++
+
+
+
+// +++Остаточные параметры (...)
+
+// Остаточные параметры собираются в массив - писать после остаточных параметров бесмыслено работать не будет!
+
+// function sumAll(...arr){
+//     let sum = 0;
+
+//     for(let arg of arr) sum = sum + arg;
+//     return sum;
+// }
+
+// console.log(sumAll(1,2,3,4,5));
+
+
+
+// function showName(firstName, lastName, ...titles) {
+//     console.log(firstName + ' ' + lastName);
+//     console.log(titles[0]);
+//     console.log(titles.length);
+// }
+
+// showName("Юлий", "Цезарь", "Консул", "Император");
+
+
+
+// ++++ Оператор расширения
+
+// let arr = [5,2,1,4];
+
+// console.log(Math.max(arr)); //будет ошибка Math.max ожидает строку с числами
+
+// console.log(Math.max(...arr)); //выведет макс число перебрал ...в расширение
+
+
+
+// ++++++++ arguments (только в функциях)- это псевдомассив, вбирает в себя остаточные параметры, которые можно перебирать и выводить как в массиве. 
+
+
+// function showName() {
+//     let arg = arguments;
+    // console.log(Array.isArray(arg)); // псевдомассив
+//     for( let name of arg ) {
+//         console.log(name);
+//     }
+// }
+
+// showName('Имя и фамилия', 'Пол и возраст');
+
+
+
+// стрелочные функции не имеют arguments
+
+// function f() {
+//     let showArg = () => console.log(arguments[0]);
+//     console.log(showArg(2));
+// }
+
+// f(1);
+
+
+// function f(name, age, ...title){
+//     console.log(name + ' ' + age);
+//     console.log( Array.isArray(title) );
+// }
+
+// f('Петр', 22, 'разное 1', 'разное 2', 'разное 3', 'разное 4',);
+
+
+
+// Когда ...arr используется при вызове функции, он расширяет перебираемый объект arr в список аргументов.
+
+// Для Math.max
+
+// let arr = [1, 2, 3];
+// let arr2 = [3, 1, 4];
+
+// console.log(Math.max(...arr, ...arr2, 10, 77));
+
+// // для слияния массивов
+
+// let arr3 = [...arr, ...arr2, -2, -3, 0];
+
+// console.log( Math.max(...arr3) );
+
+
+// Оператор (расширения) умеет переворачивать строку в массив символов
+
+
+// let str = 'Hello';
+// console.log([...str]);
+
+// // То же самое умеет делать Array.from
+
+// console.log(Array.from(str));
+
+
+
+// +++++++++++ Замыкание
+
