@@ -4111,3 +4111,41 @@ Boolean ( str ); булево значение
 
 // +++++++++++ Замыкание
 
+
+// Function Expression
+// Устаревшее то что сейчас не используют
+
+// (function(){
+//     console.log('Скобки вокруг функции');
+// })();
+
+// (function() {
+//     console.log('Скобки вокруг всего');
+// }());
+
+// !function() {
+//     console.log('Выражение начинается с логического оператора NOT');
+// }();
+
+// +function() {
+//     console.log('Выражение начинается с унарного +');
+// }();
+
+// function sum(a) {
+//     return function(b) {
+//         return a + b;
+//     };
+// };
+
+// console.log( sum(4)(3) );
+
+
+function sayHiBye( firstName, lastName) {
+    function getFullName () {
+        return firstName + ' ' + lastName; 
+    }
+    alert('Hello ' + getFullName() );
+    alert('Bye ' + getFullName() );
+}
+
+sayHiBye('Михаил', 'Евгеньевич');
