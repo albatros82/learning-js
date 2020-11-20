@@ -4139,13 +4139,24 @@ Boolean ( str ); булево значение
 
 // console.log( sum(4)(3) );
 
+// function User(name) {
+//     this.sayHi = function() {
+//         alert('привет'+ ' ' + name);
+//     }
+// }
 
-function sayHiBye( firstName, lastName) {
-    function getFullName () {
-        return firstName + ' ' + lastName; 
-    }
-    alert('Hello ' + getFullName() );
-    alert('Bye ' + getFullName() );
-}
+// let user = new User('Ivan');
 
-sayHiBye('Михаил', 'Евгеньевич');
+// user.sayHi();
+
+// function sayHi(firstName = 'Ivan', lastName = 'Проводников') {
+//     function fullName() {
+//         return firstName + ' ' + lastName;
+//     }
+//     alert( 'Hello' + ' ' + fullName() );
+// }
+
+// sayHi('John', 'Michael');
+
+
+function m
