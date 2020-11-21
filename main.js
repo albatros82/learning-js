@@ -4158,5 +4158,44 @@ Boolean ( str ); булево значение
 
 // sayHi('John', 'Michael');
 
+let counter = {
+    count: 0,
+    up(){
+        return ++counter.count; 
+    },
+    down(){
+        return --counter.count;
+    }
+};
 
-function m
+let up = counter.up;
+let down = counter.down;
+console.log(up());
+console.log(down());
+
+
+
+// function Counter() {
+//     let num = 0;
+//     this.up = function() {
+//         return ++num;
+//     }
+//     this.down = function() {
+//         return --num;
+//     }
+// }
+
+// let count = new Counter;
+// let up = count.up;
+// let down = count.down;
+
+// console.log( up() );
+// console.log( down() );
+
+
+
+
+
+
+
+
