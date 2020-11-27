@@ -4158,20 +4158,20 @@ Boolean ( str ); булево значение
 
 // sayHi('John', 'Michael');
 
-let counter = {
-    count: 0,
-    up(){
-        return ++counter.count; 
-    },
-    down(){
-        return --counter.count;
-    }
-};
+// let counter = {
+//     count: 0,
+//     up(){
+//         return ++counter.count; 
+//     },
+//     down(){
+//         return --counter.count;
+//     }
+// };
 
-let up = counter.up;
-let down = counter.down;
-console.log(up());
-console.log(down());
+// let up = counter.up;
+// let down = counter.down;
+// console.log(up());
+// console.log(down());
 
 
 
@@ -4194,8 +4194,51 @@ console.log(down());
 
 
 
+// +++++++++ ГЛОБАЛЬНЫЕ ОБЪЕКТЫ ++++++++++++
+
+// window - по старому обращению в браузере (не поддерживает IE и др.)
+// globalThis - по новому обращению
 
 
+// alert( 'Привет' );
+// window.alert('Привет');
+
+// var gVar = 5;
+// alert(window.gVar);  // window находит глобальные объекты и исполняет их,
+
+// let gVar = 5;
+// alert(window.gVar); // undefined (let объявляет не глобально)
+
+// var sayHi = 'Привет';
+// // let sayHi = 'Hi';
+// alert(globalThis.sayHi);
+
+// // сделать информацию о текущем пользователе глобально, для предоставления доступа во всем скрипте.
+// window.currentUser = {
+//     name: 'John'
+// };
+
+// // где угодно в коде
+// console.log( currentUser.name );
+
+// if(!window.Promise) {
+//     alert('Ваш браузер устарел')
+// } else {
+//     alert('Ваш браузер актуален')
+// };
 
 
+// function ask(question, ...handlers) {
+//     let isYes = confirm(question);
+
+//     for(let handler of handlers) {
+//         if(handler.length == 0) {
+//             if(isYes) handler();
+//         } else {
+//             handler(isYes);
+//         }
+//     }
+// };
+
+// ask("Вопрос?", () => alert('Вы ответили да'), result => alert(result));
 
