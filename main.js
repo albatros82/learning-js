@@ -1,5 +1,8 @@
-
 // ++++++++++++++++++++++++++++++++
+
+// Метод eval() выполняет JavaScript код, представленный строкой.
+// alert(eval(prompt('Введите выражение','2 + 2')));
+
 // метод для Map из объекта
 // Object.entries(obj);
 
@@ -4228,17 +4231,76 @@ Boolean ( str ); булево значение
 // };
 
 
-// function ask(question, ...handlers) {
+// function ask(question, ...arr) {
 //     let isYes = confirm(question);
 
-//     for(let handler of handlers) {
-//         if(handler.length == 0) {
-//             if(isYes) handler();
+//     for(let obr of arr) {
+//         if(obr.length == 0) {
+//             if(isYes) obr();
 //         } else {
-//             handler(isYes);
+//             obr(isYes);
 //         }
 //     }
 // };
 
 // ask("Вопрос?", () => alert('Вы ответили да'), result => alert(result));
 
+// ++++++ Объект функции, NFE ++++++
+
+// let sayHi = function fun(who) {
+//     if(who) {
+//         alert(`Привет ${who}`)
+//     } else {
+//         fun('Guest');
+//     }
+// }
+
+// sayHi('User');
+
+// let sayHi = function func(who, ...arr) {
+//     if(who){
+//         console.log(`Привет ${who} ${arr.join(' ')}`)
+//     } else {
+//         func('Гость');
+//     }
+// }
+// sayHi('Черенков', 'Лев', 'Игорович');
+
+
+//++++++++ Синтаксис new Function +++++++++
+// let func = new Function([arg1,arg2, ...argN], functionBody);
+// пример
+// let func = new Function('a', 'b', 'return a + b');
+// console.log( func( 1, 2) );
+
+// let sayHi = new Function(`alert ('Hello')`);
+// sayHi();
+
+
+// Замыкание
+
+// let value = 'Test-out'; //глоб
+
+// function getFunc() {
+//     let value = 'Test-in';
+//     let func = new Function('alert(value)'); // new Function берет глобальное значение 
+//     return func;
+// }
+
+// getFunc()();
+
+// let value = 'Test-out'; //глоб
+
+// function getFunc() {
+//     let value = 'Test-in';
+//     let func = () => {console.log(value)};
+//     return func;
+// }
+// getFunc()();
+
+
+
+// +++++++++++ Планирование setTimeout и setInterval +++++++++
+
+// setTimeout - один раз через определённый интервал времени
+// setInterval - регулярно повторяя вызов через опр-й интервал времени
